@@ -27,7 +27,7 @@ beer_id VARCHAR(256),
 beer_name VARCHAR(256),
 brewery_id VARCHAR(256),
 location_id VARCHAR(256),
-notes VARCHAR(256),
+notes VARCHAR(8192),
 retired VARCHAR(256),
 style_id VARCHAR(256))
 
@@ -35,7 +35,7 @@ CREATE TABLE A_STG.dbo.STG_breweries(
 brewery_id VARCHAR(256),
 brewery_name VARCHAR(256),
 location_id VARCHAR(256),
-note VARCHAR(256))
+note VARCHAR(8192))
 
 CREATE TABLE A_STG.dbo.STG_breweryservices(
 brewery_id VARCHAR(256),
