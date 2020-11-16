@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PRJKT2", "PRJKT2\PRJKT2.dtproj", "{19355DA3-8B0D-430C-8D8A-D3039DE014BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19355DA3-8B0D-430C-8D8A-D3039DE014BD}.Development|Default.ActiveCfg = Development
+		{19355DA3-8B0D-430C-8D8A-D3039DE014BD}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAC4871F-F2D1-4A1A-9076-8DE857242697}
+	EndGlobalSection
+EndGlobal
