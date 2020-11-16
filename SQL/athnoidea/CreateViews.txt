@@ -1,0 +1,138 @@
+------------
+--CREATE VIEWS
+------------
+
+USE DW
+GO
+
+CREATE OR ALTER VIEW dbo.DimCustomerView AS
+SELECT
+
+DW_Customer.CustomerID AS [BusinessKey],
+DW_Customer.StoreID AS[StoreID],
+
+DW_SalesTerritory.Name AS [CustomerTerritoryName],
+DW_SalesTerritory.CountryRegionCode AS [RegionCode],
+DW_SalesTerritory.[Group] as [CustomerTerritoryGroup],
+
+DW_Person.PersonType AS [PersonType],
+DW_Person.FirstName AS [FirstName],
+DW_Person.MiddleName AS [MiddleName],
+DW_Person.LastName AS [LastName],
+Dw_Person.EmailPromotion AS [EmailPromotion]
+
+FROM DW_Customer INNER JOIN DW_Person ON DW_Customer.PersonID=DW_Person.BusinessKey
+INNER JOIN DW_SalesTerritory ON DW_Customer.TerritoryID = DW_SalesTerritory.TerritoryID;
+
+USE DW
+GO
+CREATE OR ALTER VIEW dbo.DimProductView AS
+SELECT
+
+DW_Product.ProductID AS [BusinessKey],
+DW_Product.[Name] AS [Name],
+DW_Product.ProductNumber AS [ProductNumber],
+DW_Product.Color AS [Color],
+DW_Product.SafetyStockLevel AS [SafetyStockLevel],
+DW_Product.ReorderPoint AS [ReorderPoint],
+DW_Product.StandardCost AS [StandardCost],
+DW_Product.ListPrice AS [ListPrice],
+DW_Product.Size AS [Size],
+DW_Product.[Weight] AS [Weight],
+DW_Product.DaysToManufacture AS [DaysToManufacture],
+DW_Product.ProductLine AS [ProductionLine],
+DW_Product.Class AS [Class],
+DW_Product.Style AS [Stlye],
+
+DW_ProductSubcategory.[Name] AS [ProductSubcategoryName],
+DW_ProductModel.[Name] AS [ProductModelName],
+
+DW_Product.SellStartDate AS [SellStartDate],
+DW_Product.SellEndDate AS [SellEndDate],
+DW_Product.DiscontinuedDate AS [DiscountinuedDate]
+
+FROM DW_Product INNER JOIN DW_ProductSubcategory ON
+DW_Product.ProductSubcategoryID = DW_ProductSubcategory.ProductSubcategoryID
+INNER JOIN DW_ProductModel ON DW_Product.ProductModelID = DW_ProductModel.ProductModelID;
+
+USE DW
+GO
+CREATE OR ALTER VIEW dbo.DimSalesPersonView AS
+SELECT
+
+DW_SalesPerson.SalesPersonID AS [BusinessKey],
+
+DW_SalesTerritory.[Name] AS [SalesTerritoryName],
+DW_SalesTerritory.CountryRegionCode AS [SalesTerritoryCountryRegionCode],
+DW_SalesTerritory.[Group] AS [SalesTerritoryGroup],
+
+DW_SalesPerson.SalesQuota AS [SalesQuota],
+DW_SalesPerson.Bonus AS [Bonus],
+DW_SalesPerson.ComissionPct AS [ComissionPct],
+DW_SalesPerson.SalesYTD AS [SalesYTD],
+DW_SalesPerson.SalesLastYear AS [SalesLastYear],
+
+DW_Employee.BirthDate AS [BirthDate],
+DW_Employee.MaritalStatus AS [MaritalSatus],
+DW_Employee.Gender AS [Gender],
+DW_Employee.HireDate AS [HireDate]
+
+FROM DW_SalesPerson LEFT JOIN DW_SalesTerritory ON DW_SalesPerson.TerritoryID = DW_SalesTerritory.TerritoryID
+LEFT JOIN DW_Employee ON DW_SalesPerson.SalesPersonID = DW_Employee.BusinessKey
+UNION SELECT -1, NULL,NULL, NULL,NULL, NULL,NULL, NULL,NULL, NULL,NULL, NULL, NULL;
+
+USE DW
+GO
+CREATE OR ALTER VIEW dbo.DimTerritoryView AS
+SELECT * FROM DW_SalesTerritory;
+
+USE DW
+GO
+--CREATE OR ALTER VIEW dbo.FactSalesOrderView AS
+--SELECT
+-- ROW_NUMBER() OVER( ORDER BY DW_SalesOrderHeader.SalesOrderNumber) AS [ID],
+-- DW_SalesOrderDetail.OrderQty AS [OrderQty],
+-- DW_SalesOrderDetail.UnitPrice AS [UnitPrice],
+-- DW_SalesOrderDetail.UnitPriceDiscount AS [UnitPriceDiscount],
+-- DW_SalesOrderDetail.LineTotal AS [LineTotal],
+--
+-- DW_SalesOrderHeader.OrderDate AS [OrderDate],
+-- DW_SalesOrderHeader.DueDate AS [DueDate],
+-- DW_SalesOrderHeader.ShipDate AS [ShipDate],
+--DW_SalesOrderHeader.OnlineOrderFlag AS [OnlineOrderFlag],
+-- 
+-- DW_ShipMethod.[Name] AS [ShipMethodName],
+--
+-- DW_Product.ProductID AS [DimProductID],
+-- DW_SalesTerritory.TerritoryID AS [DimTerritoryID],
+-- DW_SalesPerson.SalesPersonID AS [DimSalesPersonID],
+-- DW_Customer.CustomerID AS [DimCustomerID]
+--
+-- FROM DW_SalesOrderDetail INNER JOIN DW_SalesOrderHeader ON DW_SalesOrderDetail.SalesOrderID = DW_SalesOrderHeader.SalesOrderNumber
+-- INNER JOIN DW_ShipMethod ON DW_ShipMethod.ShipMethodID = DW_SalesOrderHeader.ShipMethodID
+-- 
+-- INNER JOIN DW_Product ON DW_Product.ProductID = DW_SalesOrderDetail.ProductID
+-- INNER JOIN DW_SalesTerritory ON DW_SalesTerritory.TerritoryID = DW_SalesOrderHeader.TerritoryID
+-- INNER JOIN DW_SalesPerson ON DW_SalesPerson.SalesPersonID = DW_SalesOrderHeader.SalesPersonID
+-- INNER JOIN DW_Customer ON DW_Customer.CustomerID = DW_SalesOrderHeader.CustomerID
+-- ;
+
+CREATE OR ALTER VIEW dbo.FactSalesOrderView AS
+SELECT
+	ROW_NUMBER() OVER( ORDER BY DW_SalesOrderHeader.SalesOrderNumber) AS [ID],
+	SalesOrderNumber,
+	[OrderQty],
+    [UnitPrice],
+    [UnitPriceDiscount],
+    [LineTotal],
+    [OrderDate],
+    [DueDate],
+    [ShipDate],
+    [OnlineOrderFlag],
+	DW_ShipMethod.[Name] AS [ShipMethodName],
+	ProductID AS [DimProductID],
+	TerritoryID AS [DimTerritoryID],
+    SalesPersonID AS [DimSalesPersonID],
+    CustomerID AS [DimCustomerID]
+ FROM [DW].[dbo].[DW_SalesOrderDetail] INNER JOIN [DW].[dbo].[DW_SalesOrderHeader] ON DW_SalesOrderDetail.SalesOrderID = DW_SalesOrderHeader.SalesOrderNumber
+ INNER JOIN DW_ShipMethod ON DW_ShipMethod.ShipMethodID = DW_SalesOrderHeader.ShipMethodID;

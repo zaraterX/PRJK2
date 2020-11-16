@@ -1,0 +1,701 @@
+------------
+--DELETE DBS
+------------
+DROP DATABASE IF EXISTS STAGE
+GO
+
+DROP DATABASE IF EXISTS DW
+GO
+
+DROP DATABASE IF EXISTS DM
+GO
+
+
+
+------------
+--CREATE DBS
+------------
+
+CREATE DATABASE STAGE COLLATE SQL_Latin1_General_CP1_CI_AS
+GO
+
+CREATE DATABASE DW COLLATE SQL_Latin1_General_CP1_CI_AS
+GO
+
+CREATE DATABASE DM COLLATE SQL_Latin1_General_CP1_CI_AS
+GO
+
+
+-------------
+--STAGE LAYER
+-------------
+
+USE STAGE
+GO
+
+CREATE TABLE STAGE.dbo.STA_SalesOrderHeader
+(
+SalesOrderID VARCHAR(256),
+RevisionNumber VARCHAR(256),
+OrderDate VARCHAR(256),
+DueDate VARCHAR(256),
+ShipDate VARCHAR(256),
+[Status] VARCHAR(256),
+OnlineOrderFlag VARCHAR(256),
+SalesOrderNumber VARCHAR(256),
+PurchaseOrderNumber VARCHAR(256),
+AccountNumber VARCHAR(256),
+CustomerID VARCHAR(256),
+SalesPersonID VARCHAR(256),
+TerritoryID VARCHAR(256),
+BillToAddressID VARCHAR(256),
+ShipToAddressID VARCHAR(256),
+ShipMethodID VARCHAR(256),
+CreditCardID VARCHAR(256),
+CreditCardApprovalCode VARCHAR(256),
+CurrencyRateID VARCHAR(256),
+SubTotal VARCHAR(256),
+TaxAmt VARCHAR(256),
+Freight VARCHAR(256),
+TotalDue VARCHAR(256),
+Comment VARCHAR(256),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_SalesOrderDetail
+(
+SalesOrderID VARCHAR(256),
+SalesOrderDetailID VARCHAR(256),
+CarrierTrackingNumber VARCHAR(256),
+OrderQty VARCHAR(256),
+ProductID VARCHAR(256), 
+SpecialOfferID VARCHAR(256),
+UnitPrice VARCHAR(256),
+UnitPriceDiscount VARCHAR(256),
+LineTotal VARCHAR(256),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_Product
+(
+ProductID VARCHAR(256),
+[Name] VARCHAR(256),
+ProductNumber VARCHAR(256),
+MakeFlag VARCHAR(256),
+FinishedGoodsFlag VARCHAR(256),
+Color VARCHAR(256),
+SafetyStockLevel VARCHAR(256),
+ReorderPoint VARCHAR(256),
+StandardCost VARCHAR(256),
+ListPrice VARCHAR(256),
+Size VARCHAR(256),
+SizeUnitMeasureCode VARCHAR(256),
+WeightUnitMeasureCode VARCHAR(256),
+Weight VARCHAR(256),
+DaysToManufacture VARCHAR(256),
+ProductLine VARCHAR(256),
+Class VARCHAR(256),
+Style VARCHAR(256),
+ProductSubcategoryID VARCHAR(256),
+ProductModelID VARCHAR(256),
+SellStartDate VARCHAR(256),
+SellEndDate VARCHAR(256),
+DiscontinuedDate VARCHAR(256),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_ProductSubcategory
+(
+ProductSubcategoryID VARCHAR(256),
+ProductCategoryID VARCHAR(256),
+[Name] VARCHAR(256),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_ProductModel
+(
+ProductModelID VARCHAR(256),
+[Name] VARCHAR(256),
+CatalogDescription VARCHAR(8000),
+Instructions VARCHAR(8000),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_SalesTerritory
+(
+TerritoryID VARCHAR(256),
+[Name] VARCHAR(256),
+CountryRegionCode VARCHAR(256),
+[Group] VARCHAR(256),
+SalesYTD VARCHAR(256),
+SalesLastYear VARCHAR(256),
+CostYTD VARCHAR(256),
+CostLastYear VARCHAR(256),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_Employee
+(
+BusinessEntityID VARCHAR(256),
+NationalIDNumber VARCHAR(256),
+LoginID VARCHAR(256),
+OrganizationNode VARCHAR(256),
+OrganizationLevel VARCHAR(256),
+JobTitle VARCHAR(256),
+BirthDate VARCHAR(256),
+MaritalStatus VARCHAR(256),
+Gender VARCHAR(256),
+HireDate VARCHAR(256),
+SalariedFlag VARCHAR(256),
+VacationHours VARCHAR(256),
+SickLeaveHours VARCHAR(256),
+CurrentFlag VARCHAR(256),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_Person
+(
+BusinessEntityID VARCHAR(256),
+PersonType VARCHAR(256),
+NameStyle VARCHAR(256),
+Title VARCHAR(256),
+FirstName VARCHAR(256),
+MiddleName VARCHAR(256),
+LastName VARCHAR(256),
+Suffix VARCHAR(256),
+EmailPromotion VARCHAR(256),
+AdditionalContactInfo VARCHAR(8000),
+Demographics VARCHAR(8000),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_Customer
+(
+CustomerID VARCHAR(256),
+PersonID VARCHAR(256),
+StoreID VARCHAR(256),
+TerritoryID VARCHAR(256),
+AccountNumber VARCHAR(256),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_SalesPerson
+(
+SalesPersonID VARCHAR(256),
+TerritoryID VARCHAR(256),
+SalesQuota VARCHAR(256),
+Bonus VARCHAR(256),
+ComissionPct VARCHAR(256),
+SalesYTD VARCHAR(256),
+SalesLastYear VARCHAR(256),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+CREATE TABLE STAGE.dbo.STA_ShipMethod
+(
+ShipMethodID VARCHAR(256),
+[Name] VARCHAR(256),
+ShipBase VARCHAR(256),
+ShipRate VARCHAR(256),
+rowguid VARCHAR(256),
+ModifiedDate VARCHAR(256)
+)
+
+
+----------
+--DW LAYER
+----------
+
+USE DW
+GO
+
+CREATE TABLE DW.dbo.DW_SalesOrderHeader
+(
+SalesOrderID int,
+RevisionNumber tinyint,
+OrderDate datetime,
+DueDate datetime,
+ShipDate datetime,
+[Status] tinyint,
+OnlineOrderFlag bit,
+SalesOrderNumber int,
+PurchaseOrderNumber nvarchar(25),
+AccountNumber nvarchar(15),
+CustomerID int,
+SalesPersonID int,
+TerritoryID int,
+BillToAddressID int,
+ShipToAddressID int,
+ShipMethodID int,
+CreditCardID int,
+CreditCardApprovalCode varchar(15),
+CurrencyRateID int,
+SubTotal money,
+TaxAmt money,
+Freight money,
+TotalDue money,
+Comment nvarchar(128),
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_SalesOrderDetail
+(
+SalesOrderID int,
+SalesOrderDetailID int,
+CarrierTrackingNumber nvarchar(25),
+OrderQty smallint,
+ProductID int,
+SpecialOfferID int,
+UnitPrice money,
+UnitPriceDiscount money,
+LineTotal numeric(38,6),
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_Product
+(
+ProductID int,
+[Name] nvarchar(50),
+ProductNumber nvarchar(25),
+MakeFlag bit,
+FinishedGoodsFlag bit,
+Color nvarchar(15),
+SafetyStockLevel smallint,
+ReorderPoint smallint,
+StandardCost money,
+ListPrice money,
+Size nvarchar(5),
+SizeUnitMeasureCode nchar(3),
+WeightUnitMeasureCode nchar(3),
+[Weight] decimal(8,2) ,
+DaysToManufacture int,
+ProductLine nchar(2),
+Class nchar(2),
+Style nchar(2),
+ProductSubcategoryID int,
+ProductModelID int,
+SellStartDate datetime,
+SellEndDate datetime,
+DiscontinuedDate datetime,
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+ValidFrom date,
+ValidTo date,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_ProductSubcategory
+(
+ProductSubcategoryID int,
+ProductCategoryID int,
+[Name] nvarchar(50),
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_ProductModel
+(
+ProductModelID int,
+[Name] nvarchar(50),
+CatalogDescription varchar(8000),
+Instructions varchar(8000),
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_SalesTerritory
+(
+TerritoryID int,
+[Name] nvarchar(50),
+CountryRegionCode nvarchar(3),
+[Group] nvarchar(50),
+SalesYTD money,
+SalesLastYear money,
+CostYTD money,
+CostLastYear money,
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_Employee
+(
+BusinessKey int,
+NationalIDNumber nvarchar(15),
+LoginID nvarchar(256),
+OrganizationNode hierarchyid,
+OrganizationLevel smallint,
+JobTitle nvarchar(50),
+BirthDate date,
+MaritalStatus nchar(1),
+Gender nchar(1),
+HireDate date,
+SalariedFlag bit,
+VacationHours smallint,
+SickLeaveHours smallint,
+CurrentFlag bit,
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_Person
+(
+BusinessKey int,
+PersonType nchar(2),
+NameStyle bit,
+Title nvarchar(8),
+FirstName nvarchar(50),
+MiddleName nvarchar(50),
+LastName nvarchar(50),
+Suffix nvarchar(10),
+EmailPromotion int,
+AdditionalContactInfo varchar(8000),
+Demographics varchar(8000),
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_Customer
+(
+CustomerID int,
+PersonID int,
+StoreID int,
+TerritoryID int,
+AccountNumber varchar(10),
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_SalesPerson
+(
+SalesPersonID int,
+TerritoryID int,
+SalesQuota money,
+Bonus money,
+ComissionPct smallmoney,
+SalesYTD money,
+SalesLastYear money,
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DW.dbo.DW_ShipMethod
+(
+ShipMethodID int,
+[Name] nvarchar(18),
+ShipBase money,
+ShipRate money,
+rowguid uniqueidentifier,
+ModifiedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+----------
+--DM LAYER
+----------
+
+USE DM
+GO
+
+CREATE TABLE DM.dbo.FactSalesOrder
+(
+SalesOrderID bigint IDENTITY(1,1),
+SalesOrderNumber int,
+OrderQty smallint,
+UnitPrice money,
+UnitPriceDiscount money,
+LineTotal numeric(38,6),
+DimProductID int,
+OrderDateID int,
+DueDateID int,
+ShipDateID int,
+DimTerritoryID int,
+OnlineOrderFlag bit,
+DimSalesPersonID int,
+ShipMethod nvarchar(18),
+DimCustomerID int,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DM.dbo.DimProduct
+(
+DimProductID int IDENTITY(1,1),
+BusinessKey int,
+[Name] nvarchar(50),
+ProductNumber nvarchar(25),
+Color nvarchar(15),
+SafetyStockLevel smallint,
+ReorderPoint smallint,
+StandardCost money,
+ListPrice money,
+Size nvarchar(5),
+[Weight] decimal(8,2) ,
+DaysToManufacture int,
+ProductLine nchar(10),
+Class nchar(10),
+Style nchar(10),
+ProductSubcategoryName nvarchar(50),
+ProductModelName nvarchar(50),
+SellStartDate datetime,
+SellEndDate datetime,
+DiscontinuedDate datetime,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DM.dbo.DimTerritory
+(
+DimTerritoryID int IDENTITY(1,1),
+BusinessKey int,
+[Name] nvarchar(50),
+CountryRegionCode nvarchar(3),
+[Group] nvarchar(50),
+SalesYTD money,
+SalesLastYear money,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DM.dbo.DimSalesPerson
+(
+DimSalesPersonID int IDENTITY(1,1),
+BusinessKey int,
+SalesTerritoryName nvarchar(50), 
+SalesTerritoryCountryRegionCode nvarchar(3),
+SalesTerritoryGroup nvarchar(50),
+SalesQuota money,
+Bonus money,
+CommissionPct money,
+SalesYTD money,
+SalesLastYear money,
+BirthDate date,
+MaritalStatus nchar(1),
+Gender nchar(1),
+HireDate date,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DM.dbo.DimCustomer
+(
+CustomerID int IDENTITY(1,1),
+BusinessKey int,
+StoreID int,
+CustomerTerritoryName nvarchar(50), 
+RegionCode nvarchar(3),
+CustomerTerritoryGroup nvarchar(50),
+PersonType nchar(2),
+FirstName nvarchar(50),
+MiddleName nvarchar(50),
+LastName nvarchar(50),
+EmailPromotion int,
+LoadTimeStamp TIMESTAMP
+)
+
+CREATE TABLE DM.dbo.DimDate
+(
+DimDateID int,
+[Date] datetime,
+[Day] int,
+[Month] int,
+[Quarter] int,
+[Year] int,
+LoadTimeStamp TIMESTAMP
+)
+
+
+
+------------
+--CREATE VIEWS
+------------
+
+USE DW
+GO
+
+CREATE OR ALTER VIEW dbo.DimCustomerView AS
+SELECT
+
+DW_Customer.CustomerID AS [BusinessKey],
+DW_Customer.StoreID AS[StoreID],
+
+DW_SalesTerritory.Name AS [CustomerTerritoryName],
+DW_SalesTerritory.CountryRegionCode AS [RegionCode],
+DW_SalesTerritory.[Group] as [CustomerTerritoryGroup],
+
+DW_Person.PersonType AS [PersonType],
+DW_Person.FirstName AS [FirstName],
+DW_Person.MiddleName AS [MiddleName],
+DW_Person.LastName AS [LastName],
+Dw_Person.EmailPromotion AS [EmailPromotion]
+
+FROM DW_Customer INNER JOIN DW_Person ON DW_Customer.PersonID=DW_Person.BusinessKey
+INNER JOIN DW_SalesTerritory ON DW_Customer.TerritoryID = DW_SalesTerritory.TerritoryID;
+
+--USE DW
+GO
+CREATE OR ALTER VIEW dbo.DimProductView AS
+SELECT
+
+DW_Product.ProductID AS [BusinessKey],
+DW_Product.[Name] AS [Name],
+DW_Product.ProductNumber AS [ProductNumber],
+DW_Product.Color AS [Color],
+DW_Product.SafetyStockLevel AS [SafetyStockLevel],
+DW_Product.ReorderPoint AS [ReorderPoint],
+DW_Product.StandardCost AS [StandardCost],
+DW_Product.ListPrice AS [ListPrice],
+DW_Product.Size AS [Size],
+DW_Product.[Weight] AS [Weight],
+DW_Product.DaysToManufacture AS [DaysToManufacture],
+DW_Product.ProductLine AS [ProductionLine],
+DW_Product.Class AS [Class],
+DW_Product.Style AS [Stlye],
+
+DW_ProductSubcategory.[Name] AS [ProductSubcategoryName],
+DW_ProductModel.[Name] AS [ProductModelName],
+
+DW_Product.SellStartDate AS [SellStartDate],
+DW_Product.SellEndDate AS [SellEndDate],
+DW_Product.DiscontinuedDate AS [DiscountinuedDate]
+
+FROM DW_Product INNER JOIN DW_ProductSubcategory ON
+DW_Product.ProductSubcategoryID = DW_ProductSubcategory.ProductSubcategoryID
+INNER JOIN DW_ProductModel ON DW_Product.ProductModelID = DW_ProductModel.ProductModelID;
+
+--USE DW
+GO
+CREATE OR ALTER VIEW dbo.DimSalesPersonView AS
+SELECT
+
+DW_SalesPerson.SalesPersonID AS [BusinessKey],
+
+DW_SalesTerritory.[Name] AS [SalesTerritoryName],
+DW_SalesTerritory.CountryRegionCode AS [SalesTerritoryCountryRegionCode],
+DW_SalesTerritory.[Group] AS [SalesTerritoryGroup],
+
+DW_SalesPerson.SalesQuota AS [SalesQuota],
+DW_SalesPerson.Bonus AS [Bonus],
+DW_SalesPerson.ComissionPct AS [ComissionPct],
+DW_SalesPerson.SalesYTD AS [SalesYTD],
+DW_SalesPerson.SalesLastYear AS [SalesLastYear],
+
+DW_Employee.BirthDate AS [BirthDate],
+DW_Employee.MaritalStatus AS [MaritalSatus],
+DW_Employee.Gender AS [Gender],
+DW_Employee.HireDate AS [HireDate]
+
+FROM DW_SalesPerson LEFT JOIN DW_SalesTerritory ON DW_SalesPerson.TerritoryID = DW_SalesTerritory.TerritoryID
+LEFT JOIN DW_Employee ON DW_SalesPerson.SalesPersonID = DW_Employee.BusinessKey
+UNION SELECT -1, NULL,NULL, NULL,NULL, NULL,NULL, NULL,NULL, NULL,NULL, NULL, NULL;
+
+--USE DW
+GO
+CREATE OR ALTER VIEW dbo.DimTerritoryView AS
+SELECT * FROM DW_SalesTerritory;
+
+--USE DW
+GO
+--CREATE OR ALTER VIEW dbo.FactSalesOrderView AS
+--SELECT
+-- ROW_NUMBER() OVER( ORDER BY DW_SalesOrderHeader.SalesOrderNumber) AS [ID],
+-- DW_SalesOrderDetail.OrderQty AS [OrderQty],
+-- DW_SalesOrderDetail.UnitPrice AS [UnitPrice],
+-- DW_SalesOrderDetail.UnitPriceDiscount AS [UnitPriceDiscount],
+-- DW_SalesOrderDetail.LineTotal AS [LineTotal],
+--
+-- DW_SalesOrderHeader.OrderDate AS [OrderDate],
+-- DW_SalesOrderHeader.DueDate AS [DueDate],
+-- DW_SalesOrderHeader.ShipDate AS [ShipDate],
+--DW_SalesOrderHeader.OnlineOrderFlag AS [OnlineOrderFlag],
+-- 
+-- DW_ShipMethod.[Name] AS [ShipMethodName],
+--
+-- DW_Product.ProductID AS [DimProductID],
+-- DW_SalesTerritory.TerritoryID AS [DimTerritoryID],
+-- DW_SalesPerson.SalesPersonID AS [DimSalesPersonID],
+-- DW_Customer.CustomerID AS [DimCustomerID]
+--
+-- FROM DW_SalesOrderDetail INNER JOIN DW_SalesOrderHeader ON DW_SalesOrderDetail.SalesOrderID = DW_SalesOrderHeader.SalesOrderNumber
+-- INNER JOIN DW_ShipMethod ON DW_ShipMethod.ShipMethodID = DW_SalesOrderHeader.ShipMethodID
+-- 
+-- INNER JOIN DW_Product ON DW_Product.ProductID = DW_SalesOrderDetail.ProductID
+-- INNER JOIN DW_SalesTerritory ON DW_SalesTerritory.TerritoryID = DW_SalesOrderHeader.TerritoryID
+-- INNER JOIN DW_SalesPerson ON DW_SalesPerson.SalesPersonID = DW_SalesOrderHeader.SalesPersonID
+-- INNER JOIN DW_Customer ON DW_Customer.CustomerID = DW_SalesOrderHeader.CustomerID
+-- ;
+
+CREATE OR ALTER VIEW dbo.FactSalesOrderView AS
+SELECT
+	ROW_NUMBER() OVER( ORDER BY DW_SalesOrderHeader.SalesOrderNumber) AS [ID],
+	SalesOrderNumber,
+	[OrderQty],
+    [UnitPrice],
+    [UnitPriceDiscount],
+    [LineTotal],
+    [OrderDate],
+    [DueDate],
+    [ShipDate],
+    [OnlineOrderFlag],
+	DW_ShipMethod.[Name] AS [ShipMethodName],
+	ProductID AS [DimProductID],
+	TerritoryID AS [DimTerritoryID],
+    SalesPersonID AS [DimSalesPersonID],
+    CustomerID AS [DimCustomerID]
+ FROM [DW].[dbo].[DW_SalesOrderDetail] INNER JOIN [DW].[dbo].[DW_SalesOrderHeader] ON DW_SalesOrderDetail.SalesOrderID = DW_SalesOrderHeader.SalesOrderNumber
+ INNER JOIN DW_ShipMethod ON DW_ShipMethod.ShipMethodID = DW_SalesOrderHeader.ShipMethodID;
+
+USE DM
+GO
+
+CREATE OR ALTER PROCEDURE LoadDimDate
+@StartDate DATE = '2000-01-01',
+@EndDate DATE = '2025-12-31'
+
+AS
+BEGIN
+	SET XACT_ABORT ON;
+	TRUNCATE TABLE dbo.DimDate;
+
+BEGIN TRAN;
+
+-- amíg nem pörgetjük végig a kezdõdátumtól a végdátumig
+WHILE @StartDate < @EndDate
+BEGIN
+	INSERT INTO dbo.DimDate (
+		[DimDateID],
+		[Date],
+		[Day],
+		[Month],
+		[Quarter],
+		[Year]
+	)
+	SELECT [DimDateID] = YEAR(@StartDate) * 10000 + MONTH(@StartDate) * 100 + DAY(@StartDate),
+		[Date] = @StartDate,
+		[Day] = DAY(@StartDate),
+		[Month] = MONTH(@StartDate),
+		[Quarter] = DATEPART(q, @StartDate),
+		[Year] = YEAR(@StartDate)
+      
+	-- növeljük a kezdõdátum értékét 1 nappal (következõ nap)
+	SET @StartDate = DATEADD(DD, 1, @StartDate)
+END
+	SELECT * FROM dbo.DimDate
+	COMMIT;
+END;
