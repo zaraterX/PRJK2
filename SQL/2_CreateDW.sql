@@ -91,14 +91,14 @@ co2_volume_low NUMERIC(38,2),
 co2_volume_high NUMERIC(38,2),
 lambicdegree INT)
 
-ALTER TABLE A_STG.dbo.DW_beeravaliabilities ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_beers ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_breweries ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_breweryservices ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_costumers ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_countries ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_locations ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_reviews ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_servingtypes ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_stylecategories ADD LoadTimeStamp TIMESTAMP 
-ALTER TABLE A_STG.dbo.DW_styles ADD LoadTimeStamp TIMESTAMP
+ALTER TABLE B_DW.dbo.DW_beeravaliabilities ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_beers ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_breweries ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_breweryservices ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_costumers ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_countries ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_locations ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_reviews ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_servingtypes ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_stylecategories ADD LoadTimeStamp TIMESTAMP 
+ALTER TABLE B_DW.dbo.DW_styles ADD LoadTimeStamp TIMESTAMP
