@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{8341054D-841F-4271-A35A-9ED7AF4D5CCC}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{278255F0-10E1-4708-BE75-70E7B024EA3A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -281,7 +281,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="user_name"
-              DTS:DTSID="{B28D4264-5980-4B21-AF93-DFFE71FFB45B}"
+              DTS:DTSID="{D2B4DEE6-C5A1-467D-A425-B9CD5A367691}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -290,7 +290,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="first_name"
-              DTS:DTSID="{1E6C1DFC-13B1-4D25-A9CC-ECDF95CF1CA8}"
+              DTS:DTSID="{42DD573E-2320-4456-B1F4-0597EC1BFB03}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -299,7 +299,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="last_name"
-              DTS:DTSID="{BF7C141F-36CC-4129-9687-533C910E578B}"
+              DTS:DTSID="{BC5E4134-A510-4A34-BCE1-ED4C684201F6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -308,7 +308,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="email"
-              DTS:DTSID="{B39DA147-BD83-4D83-A8E6-40F74ACFF6CD}"
+              DTS:DTSID="{7CBDB21C-8380-41BE-B504-19FD1800311A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -317,7 +317,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="location_id"
-              DTS:DTSID="{05FCCD9B-68CF-4568-85EC-02C860CF0108}"
+              DTS:DTSID="{757432C5-9194-40E9-B560-D36E86875771}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -346,7 +346,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country_code"
-              DTS:DTSID="{4E2650F9-8BF4-41C7-8C06-962D2A666819}"
+              DTS:DTSID="{A65A2D22-710C-4C98-B2C3-16708D57605D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -355,7 +355,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="name"
-              DTS:DTSID="{3A2C386F-468E-48F8-8D86-6883741C024E}"
+              DTS:DTSID="{C7804E5B-64B5-478F-BA6C-911C09223C31}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -364,7 +364,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="region"
-              DTS:DTSID="{AFE3297A-5169-4040-AE1D-AB0649E54CFC}"
+              DTS:DTSID="{6F6D62D7-D5B8-4050-8FB3-271808BDEF4B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -373,7 +373,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sub_region"
-              DTS:DTSID="{B7502429-28F8-4C8A-82A4-94CAE48349B9}"
+              DTS:DTSID="{5AF1EEEF-54D8-443F-88C4-251493771401}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -382,7 +382,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="intermediate_region"
-              DTS:DTSID="{727F11D9-9B37-456A-B037-13B83678485E}"
+              DTS:DTSID="{D9B90B82-9BF2-4EFE-9A74-D273E440414C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -421,7 +421,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="location_id"
-              DTS:DTSID="{053034EA-6CEA-48EE-BB47-72951E5F411C}"
+              DTS:DTSID="{195B473F-B2D9-4896-B94D-88ABAA6C32D6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -430,7 +430,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{2FCDC16A-5F24-445C-AFF9-F66DB035E7B3}"
+              DTS:DTSID="{775D4A7A-A66C-4FF9-A5FD-972FF35D2E3E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -439,7 +439,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="state"
-              DTS:DTSID="{5D066A91-142C-4308-952E-0A348700941B}"
+              DTS:DTSID="{7DC36DE6-ECEC-4843-AAEF-E62D942E49A8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -448,7 +448,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country_code"
-              DTS:DTSID="{9B7288AA-C81E-49CE-8F7D-76EE91B5AD46}"
+              DTS:DTSID="{BDB78518-A93A-4373-8E4E-337F3F26389F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -488,7 +488,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="serving_id"
-              DTS:DTSID="{1D2BC3DA-412F-4FCE-B146-B1E2B673BDE8}"
+              DTS:DTSID="{1FE76D9A-8C2F-40FE-9279-BF79AE2495E0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -497,7 +497,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="serving_category"
-              DTS:DTSID="{91E021AD-2799-4A13-9A8C-C98B4E2A53EF}"
+              DTS:DTSID="{B0D9CDAD-FE82-44B6-BDBE-74C2CB3C2897}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -516,7 +516,7 @@
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
+          DTS:CodePage="1252"
           DTS:ConnectionString="E:\sheets\source\StyleCategories.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
@@ -526,7 +526,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="type_id"
-              DTS:DTSID="{E2888D3D-F37E-4543-A80F-20B1B693CC6C}"
+              DTS:DTSID="{EBCB31B9-80B8-46F4-B5E7-141CA8BF4679}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -535,7 +535,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="type"
-              DTS:DTSID="{66665390-E392-43F4-8202-84789ADC00FB}"
+              DTS:DTSID="{95DCEECD-63CC-40A5-A827-DE5A43098B14}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -564,7 +564,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="style_id"
-              DTS:DTSID="{DD8A234A-FB2B-424E-B658-E718B3211659}"
+              DTS:DTSID="{619CC7A6-E13C-49E0-ACFE-83908DE6CCA3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -573,7 +573,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="style_name"
-              DTS:DTSID="{2801F554-3801-480B-8CBB-FAE30E5E5C9D}"
+              DTS:DTSID="{FE184A07-BE58-4C98-8609-01C241B71CC4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -582,7 +582,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="category_type"
-              DTS:DTSID="{8326B762-41A2-414A-8AB9-FC74848C07D7}"
+              DTS:DTSID="{F7533D4C-73F7-46F0-ACBD-E634085EFB14}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -591,7 +591,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IBU_lower"
-              DTS:DTSID="{5A286C7C-7550-4646-9E84-81DACDEB47E7}"
+              DTS:DTSID="{559F6DE8-CFF1-463F-859E-6D5F73F80216}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -600,7 +600,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IBU_high"
-              DTS:DTSID="{6D41C549-D943-4967-B28A-D69DAE0BDF41}"
+              DTS:DTSID="{0092B026-A1D1-4ECD-B949-442E76CFC4FF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -609,7 +609,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ABV_low"
-              DTS:DTSID="{E593275B-93B1-4E30-962E-D5485D6554B9}"
+              DTS:DTSID="{959DC916-F317-4119-9C73-C1FCE1C322EC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -618,7 +618,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ABV_high"
-              DTS:DTSID="{257D3121-6C0C-44CD-AFFB-295DBD834F26}"
+              DTS:DTSID="{750977B1-8B26-4B09-B41E-C321B3E8FCFA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -627,7 +627,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CO2_volume_low"
-              DTS:DTSID="{E002CE6A-93AD-46A1-8993-4E3A79BA82C4}"
+              DTS:DTSID="{A06C9258-1448-4CC8-9A17-D28B017D3C77}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -636,7 +636,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CO2_volume_high"
-              DTS:DTSID="{F13C2463-725C-42A4-A9D9-88060651001A}"
+              DTS:DTSID="{66E27492-B281-471D-A96E-96EBB8D24DE4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -645,7 +645,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LambicDegree"
-              DTS:DTSID="{332D9814-0B0C-47A5-8D95-14F7B7A0ED44}"
+              DTS:DTSID="{65E482EE-4ABC-46C0-86A8-5E98E5204628}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -860,7 +860,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].ExternalColumns[beer_name]"
-                      length="50"
+                      length="256"
                       lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[beer_name]"
                       name="beer_name"
                       truncationRowDisposition="FailComponent">
@@ -973,28 +973,6 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[abv]"
                       name="abv"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[notes]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].ExternalColumns[notes]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[notes]"
-                      name="notes"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1177,7 +1155,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
-                      length="50"
+                      length="256"
                       lineageId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output].Columns[brewery_name]"
                       name="brewery_name"
                       truncationRowDisposition="FailComponent">
@@ -1202,28 +1180,6 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output].Columns[location_id]"
                       name="location_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output].Columns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output].ExternalColumns[note]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output].Columns[note]"
-                      name="note"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1670,8 +1626,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Read in countries.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Breweries.csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[Breweries.csv]"
+                  connectionManagerID="Package.ConnectionManagers[Countries.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Countries.csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -1680,15 +1636,15 @@
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[brewery_id]"
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[country_code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[country_code]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[brewery_id]"
-                      name="brewery_id"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[country_code]"
+                      name="country_code"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1702,15 +1658,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[brewery_name]"
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[brewery_name]"
-                      name="brewery_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="256"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1724,15 +1680,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[location_id]"
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[region]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[location_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[region]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[location_id]"
-                      name="location_id"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[region]"
+                      name="region"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1746,15 +1702,37 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[note]"
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[sub_region]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[note]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[sub_region]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[note]"
-                      name="note"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[sub_region]"
+                      name="sub_region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[intermediate_region]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[intermediate_region]"
+                      name="intermediate_region"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1771,29 +1749,35 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[country_code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="brewery_id" />
+                      name="country_code" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="brewery_name" />
+                      name="name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[location_id]"
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[region]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="location_id" />
+                      name="region" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[note]"
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[sub_region]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="note" />
+                      name="sub_region" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].ExternalColumns[intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="intermediate_region" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1847,8 +1831,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Read in locations.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Breweries.csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[Breweries.csv]"
+                  connectionManagerID="Package.ConnectionManagers[Locations.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Locations.csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -1856,50 +1840,6 @@
                   refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[brewery_id]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[brewery_id]"
-                      name="brewery_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[brewery_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[brewery_name]"
-                      name="brewery_name"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[location_id]"
                       codePage="1252"
@@ -1923,15 +1863,59 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[note]"
+                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[city]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[note]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[city]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[note]"
-                      name="note"
+                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[state]"
+                      name="state"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[country_code]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[country_code]"
+                      name="country_code"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1948,29 +1932,29 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="brewery_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="brewery_name" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[location_id]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="location_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[note]"
+                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[city]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="note" />
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].ExternalColumns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country_code" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2024,8 +2008,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Read in servingtypes.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Breweries.csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[Breweries.csv]"
+                  connectionManagerID="Package.ConnectionManagers[ServingTypes.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[ServingTypes.csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -2034,15 +2018,15 @@
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[brewery_id]"
+                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[serving_id]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[serving_id]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[brewery_id]"
-                      name="brewery_id"
+                      lineageId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[serving_id]"
+                      name="serving_id"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2056,59 +2040,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[brewery_name]"
+                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[serving_category]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[serving_category]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[brewery_name]"
-                      name="brewery_name"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[location_id]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[location_id]"
-                      name="location_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[note]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[note]"
-                      name="note"
+                      lineageId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[serving_category]"
+                      name="serving_category"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2125,29 +2065,17 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
+                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[serving_id]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="brewery_id" />
+                      name="serving_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
+                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[serving_category]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="brewery_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="location_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].ExternalColumns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="note" />
+                      name="serving_category" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2201,8 +2129,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Read in stylecategories.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Breweries.csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[Breweries.csv]"
+                  connectionManagerID="Package.ConnectionManagers[StyleCategories.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[StyleCategories.csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -2211,15 +2139,15 @@
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[brewery_id]"
+                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[type_id]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[type_id]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[brewery_id]"
-                      name="brewery_id"
+                      lineageId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[type_id]"
+                      name="type_id"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2233,59 +2161,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[brewery_name]"
+                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[type]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[type]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[brewery_name]"
-                      name="brewery_name"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[location_id]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[location_id]"
-                      name="location_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[note]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[note]"
-                      name="note"
+                      lineageId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[type]"
+                      name="type"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2302,29 +2186,17 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
+                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[type_id]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="brewery_id" />
+                      name="type_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
+                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[type]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="brewery_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="location_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="note" />
+                      name="type" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2378,8 +2250,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Read in styles.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Breweries.csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[Breweries.csv]"
+                  connectionManagerID="Package.ConnectionManagers[Styles.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Styles.csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -2388,15 +2260,15 @@
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[brewery_id]"
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[style_id]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[style_id]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[brewery_id]"
-                      name="brewery_id"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[style_id]"
+                      name="style_id"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2410,15 +2282,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[brewery_name]"
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[style_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[style_name]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[brewery_name]"
-                      name="brewery_name"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[style_name]"
+                      name="style_name"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2432,15 +2304,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[location_id]"
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[category_type]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[location_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[category_type]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[location_id]"
-                      name="location_id"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[category_type]"
+                      name="category_type"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2454,15 +2326,147 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[note]"
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[IBU_lower]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[note]"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[IBU_lower]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[note]"
-                      name="note"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[IBU_lower]"
+                      name="IBU_lower"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[IBU_high]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[IBU_high]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[IBU_high]"
+                      name="IBU_high"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[ABV_low]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[ABV_low]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[ABV_low]"
+                      name="ABV_low"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[ABV_high]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[ABV_high]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[ABV_high]"
+                      name="ABV_high"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[CO2_volume_low]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[CO2_volume_low]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[CO2_volume_low]"
+                      name="CO2_volume_low"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[CO2_volume_high]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[CO2_volume_high]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[CO2_volume_high]"
+                      name="CO2_volume_high"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[LambicDegree]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[LambicDegree]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[LambicDegree]"
+                      name="LambicDegree"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2479,29 +2483,65 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[style_id]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="brewery_id" />
+                      name="style_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[style_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="brewery_name" />
+                      name="style_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[location_id]"
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[category_type]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="location_id" />
+                      name="category_type" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[note]"
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[IBU_lower]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="note" />
+                      name="IBU_lower" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[IBU_high]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="IBU_high" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[ABV_low]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ABV_low" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[ABV_high]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ABV_high" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[CO2_volume_low]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CO2_volume_low" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[CO2_volume_high]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CO2_volume_high" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].ExternalColumns[LambicDegree]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LambicDegree" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2526,183 +2566,6 @@
                       refId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Read in users"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Source"
-              localeId="1033"
-              name="Read in users"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">true</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Read in users.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Breweries.csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[Breweries.csv]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output]"
-                  name="Flat File Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].Columns[brewery_id]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].Columns[brewery_id]"
-                      name="brewery_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].Columns[brewery_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].Columns[brewery_name]"
-                      name="brewery_name"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].Columns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].ExternalColumns[location_id]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].Columns[location_id]"
-                      name="location_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].Columns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].ExternalColumns[note]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].Columns[note]"
-                      name="note"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].ExternalColumns[brewery_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="brewery_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].ExternalColumns[brewery_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="brewery_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].ExternalColumns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="location_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].ExternalColumns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="note" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Error Output]"
-                  isErrorOut="true"
-                  name="Flat File Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="1252"
-                      dataType="text"
-                      description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      name="Flat File Source Error Output Column" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2925,7 +2788,7 @@
                       refId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].Columns[beer_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="256"
                       cachedName="beer_name"
                       externalMetadataColumnId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
                       lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[beer_name]" />
@@ -2961,14 +2824,6 @@
                       cachedName="abv"
                       externalMetadataColumnId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
                       lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[abv]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].Columns[notes]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="notes"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[notes]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].Columns[retired]"
                       cachedCodepage="1252"
@@ -3154,18 +3009,10 @@
                       refId="Package\Data Flow Task\Send to STG_breweries.Inputs[OLE DB Destination Input].Columns[brewery_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="256"
                       cachedName="brewery_name"
                       externalMetadataColumnId="Package\Data Flow Task\Send to STG_breweries.Inputs[OLE DB Destination Input].ExternalColumns[brewery_name]"
                       lineageId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output].Columns[brewery_name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_breweries.Inputs[OLE DB Destination Input].Columns[note]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="note"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_breweries.Inputs[OLE DB Destination Input].ExternalColumns[note]"
-                      lineageId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output].Columns[note]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Send to STG_breweries.Inputs[OLE DB Destination Input].Columns[location_id]"
                       cachedCodepage="1252"
@@ -3549,7 +3396,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_beers]</property>
+                  name="OpenRowset">[dbo].[STG_countries]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3606,134 +3453,78 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[beer_id]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[country_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="beer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      lineageId="Package\Data Flow Task\177:invalid" />
+                      cachedName="country_code"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[country_code]"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[country_code]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[beer_name]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[region]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="beer_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      lineageId="Package\Data Flow Task\180:invalid" />
+                      cachedName="region"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[region]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[brewery_id]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[sub_region]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="brewery_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[brewery_id]" />
+                      cachedName="sub_region"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[sub_region]"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[sub_region]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[style_id]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[intermediate_region]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="style_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      lineageId="Package\Data Flow Task\189:invalid" />
+                      cachedName="intermediate_region"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[intermediate_region]"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[intermediate_region]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[availability_type]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="availability_type"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      lineageId="Package\Data Flow Task\192:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[abv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="abv"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      lineageId="Package\Data Flow Task\195:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[notes]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="notes"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      lineageId="Package\Data Flow Task\198:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[retired]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="retired"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      lineageId="Package\Data Flow Task\201:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].Columns[loc_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="loc_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      lineageId="Package\Data Flow Task\186:invalid" />
+                      cachedLength="256"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                      lineageId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output].Columns[name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[country_code]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="beer_id" />
+                      name="country_code" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="beer_name" />
+                      name="country_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[region]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="brewery_id" />
+                      name="region" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[sub_region]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="location_id" />
+                      name="sub_region" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
+                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[intermediate_region]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="style_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="availability_type" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="abv" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4000"
-                      name="notes" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="retired" />
+                      name="intermediate_region" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3778,7 +3569,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_beers]</property>
+                  name="OpenRowset">[dbo].[STG_locations]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3835,98 +3626,40 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[beer_id]"
+                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[location_id]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="beer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      lineageId="Package\Data Flow Task\177:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[beer_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="beer_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      lineageId="Package\Data Flow Task\180:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[brewery_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="brewery_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[brewery_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[style_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="style_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      lineageId="Package\Data Flow Task\189:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[availability_type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="availability_type"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      lineageId="Package\Data Flow Task\192:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[abv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="abv"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      lineageId="Package\Data Flow Task\195:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[notes]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="notes"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      lineageId="Package\Data Flow Task\198:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[retired]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="retired"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      lineageId="Package\Data Flow Task\201:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[loc_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="loc_id"
+                      cachedName="location_id"
                       externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      lineageId="Package\Data Flow Task\186:invalid" />
+                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[location_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="state"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[stat]"
+                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].Columns[country_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country_code"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[country_code]"
+                      lineageId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output].Columns[country_code]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="beer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="beer_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="brewery_id" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
                       codePage="1252"
@@ -3934,35 +3667,23 @@
                       length="256"
                       name="location_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
+                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="style_id" />
+                      name="city" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
+                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[stat]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="availability_type" />
+                      name="stat" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
+                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[country_code]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="abv" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4000"
-                      name="notes" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="retired" />
+                      name="country_code" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4007,7 +3728,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_beers]</property>
+                  name="OpenRowset">[dbo].[STG_servingtypes]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4064,134 +3785,36 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[beer_id]"
+                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[serving_id]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="beer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      lineageId="Package\Data Flow Task\177:invalid" />
+                      cachedName="serving_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[serving_id]"
+                      lineageId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[serving_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[beer_name]"
+                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[serving_category]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="beer_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      lineageId="Package\Data Flow Task\180:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[brewery_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="brewery_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      lineageId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[brewery_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[style_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="style_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      lineageId="Package\Data Flow Task\189:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[availability_type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="availability_type"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      lineageId="Package\Data Flow Task\192:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[abv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="abv"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      lineageId="Package\Data Flow Task\195:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[notes]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="notes"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      lineageId="Package\Data Flow Task\198:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[retired]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="retired"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      lineageId="Package\Data Flow Task\201:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].Columns[loc_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="loc_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      lineageId="Package\Data Flow Task\186:invalid" />
+                      cachedName="serving_category"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[serving_category]"
+                      lineageId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output].Columns[serving_category]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
+                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[serving_id]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="beer_id" />
+                      name="serving_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
+                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[serving_category]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="beer_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="brewery_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="location_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="style_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="availability_type" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="abv" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4000"
-                      name="notes" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="retired" />
+                      name="serving_category" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4236,7 +3859,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_beers]</property>
+                  name="OpenRowset">[dbo].[STG_stylecategories]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4293,134 +3916,36 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[beer_id]"
+                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[type_id]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="beer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      lineageId="Package\Data Flow Task\177:invalid" />
+                      cachedName="type_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
+                      lineageId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[type_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[beer_name]"
+                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="beer_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      lineageId="Package\Data Flow Task\180:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[brewery_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="brewery_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      lineageId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[brewery_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[style_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="style_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      lineageId="Package\Data Flow Task\189:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[availability_type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="availability_type"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      lineageId="Package\Data Flow Task\192:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[abv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="abv"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      lineageId="Package\Data Flow Task\195:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[notes]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="notes"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      lineageId="Package\Data Flow Task\198:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[retired]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="retired"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      lineageId="Package\Data Flow Task\201:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[loc_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="loc_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      lineageId="Package\Data Flow Task\186:invalid" />
+                      cachedName="type"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[style_category]"
+                      lineageId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output].Columns[type]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
+                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="beer_id" />
+                      name="category_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
+                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[style_category]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="beer_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="brewery_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="location_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="style_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="availability_type" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="abv" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4000"
-                      name="notes" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="retired" />
+                      name="style_category" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4465,7 +3990,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_beers]</property>
+                  name="OpenRowset">[dbo].[STG_styles]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4522,104 +4047,88 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[beer_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="beer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      lineageId="Package\Data Flow Task\177:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[beer_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="beer_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      lineageId="Package\Data Flow Task\180:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[brewery_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="brewery_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[brewery_id]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[style_id]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="style_id"
                       externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      lineageId="Package\Data Flow Task\189:invalid" />
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[style_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[availability_type]"
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[style_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="availability_type"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      lineageId="Package\Data Flow Task\192:invalid" />
+                      cachedName="style_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[style_name]"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[style_name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[abv]"
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[category_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="abv"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      lineageId="Package\Data Flow Task\195:invalid" />
+                      cachedName="category_type"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[category_type]"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[category_type]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[notes]"
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[IBU_lower]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="notes"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      lineageId="Package\Data Flow Task\198:invalid" />
+                      cachedName="IBU_lower"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[ibu_lower]"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[IBU_lower]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[retired]"
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[IBU_high]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="retired"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      lineageId="Package\Data Flow Task\201:invalid" />
+                      cachedName="IBU_high"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[ibu_high]"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[IBU_high]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[loc_id]"
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[ABV_low]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="loc_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      lineageId="Package\Data Flow Task\186:invalid" />
+                      cachedName="ABV_low"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[abv_low]"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[ABV_low]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[ABV_high]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABV_high"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[abv_high]"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[ABV_high]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[CO2_volume_low]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CO2_volume_low"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[co2_volume_low]"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[CO2_volume_low]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[CO2_volume_high]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CO2_volume_high"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[co2_volume_high]"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[CO2_volume_high]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].Columns[LambicDegree]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LambicDegree"
+                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[lambicdegree]"
+                      lineageId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output].Columns[LambicDegree]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="beer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="beer_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="brewery_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="location_id" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
                       codePage="1252"
@@ -4627,29 +4136,59 @@
                       length="256"
                       name="style_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[style_name]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="availability_type" />
+                      name="style_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[category_type]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="abv" />
+                      name="category_type" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4000"
-                      name="notes" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[ibu_lower]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="retired" />
+                      name="ibu_lower" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[ibu_high]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="ibu_high" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[abv_low]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="abv_low" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[abv_high]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="abv_high" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[co2_volume_low]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="co2_volume_low" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[co2_volume_high]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="co2_volume_high" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input].ExternalColumns[lambicdegree]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="lambicdegree" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4678,235 +4217,6 @@
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Data Flow Task\Send to STG_users"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="Send to STG_users"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_beers]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Send to STG_users.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.A_STG]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.A_STG]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].Columns[beer_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="beer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      lineageId="Package\Data Flow Task\177:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].Columns[beer_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="beer_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      lineageId="Package\Data Flow Task\180:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].Columns[brewery_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="brewery_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      lineageId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output].Columns[brewery_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].Columns[style_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="style_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      lineageId="Package\Data Flow Task\189:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].Columns[availability_type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="availability_type"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      lineageId="Package\Data Flow Task\192:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].Columns[abv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="abv"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      lineageId="Package\Data Flow Task\195:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].Columns[notes]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="notes"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      lineageId="Package\Data Flow Task\198:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].Columns[retired]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="retired"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      lineageId="Package\Data Flow Task\201:invalid" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].Columns[loc_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="loc_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      lineageId="Package\Data Flow Task\186:invalid" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="beer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="beer_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="brewery_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="location_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="style_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="availability_type" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="abv" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4000"
-                      name="notes" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="retired" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Send to STG_users.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Send to STG_users.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Send to STG_users.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Send to STG_users.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
@@ -4926,44 +4236,39 @@
               startId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Flat File Source Output3]"
-              endId="Package\Data Flow Task\Send to STG_breweryservices.Inputs[OLE DB Destination Input]"
-              name="Flat File Source Output"
-              startId="Package\Data Flow Task\Read in breweryservices.Outputs[Flat File Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output4]"
               endId="Package\Data Flow Task\Send to STG_costumers.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Read in costumers.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output5]"
+              refId="Package\Data Flow Task.Paths[Flat File Source Output4]"
               endId="Package\Data Flow Task\Send to STG_countries.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Read in countries.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output6]"
+              refId="Package\Data Flow Task.Paths[Flat File Source Output5]"
               endId="Package\Data Flow Task\Send to STG_locations.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Read in locations.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output7]"
+              refId="Package\Data Flow Task.Paths[Flat File Source Output6]"
               endId="Package\Data Flow Task\Send to STG_servingtypes.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Read in servingtypes.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output8]"
+              refId="Package\Data Flow Task.Paths[Flat File Source Output7]"
               endId="Package\Data Flow Task\Send to STG_stylecategories.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Read in stylecategories.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output9]"
+              refId="Package\Data Flow Task.Paths[Flat File Source Output8]"
               endId="Package\Data Flow Task\Send to STG_styles.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Read in styles.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output10]"
-              endId="Package\Data Flow Task\Send to STG_users.Inputs[OLE DB Destination Input]"
+              refId="Package\Data Flow Task.Paths[Flat File Source Output9]"
+              endId="Package\Data Flow Task\Send to STG_breweryservices.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\Read in users.Outputs[Flat File Source Output]" />
+              startId="Package\Data Flow Task\Read in breweryservices.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -5074,9 +4379,9 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="225,42"
-          Id="Package\SQL Task Truncate All Tables"
-          TopLeft="498,68" />
+          Size="155,45"
+          Id="Package\Data Flow Task"
+          TopLeft="693,187" />
         <NodeLayout
           Size="158,42"
           Id="Package\LoadReviews\Bulk Insert Task"
@@ -5088,6 +4393,10 @@
           Size="258,184"
           Id="Package\LoadReviews"
           TopLeft="314,186" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\SQL Task Truncate All Tables"
+          TopLeft="498,68" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="574.333333333333,110">
@@ -5122,36 +4431,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="155,45"
-          Id="Package\Data Flow Task"
-          TopLeft="694,188" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="646.666666666667,110">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="124.833333333333,78"
+              EndConnector="123.833333333333,77"
               Start="0,0"
-              End="124.833333333333,70.5">
+              End="123.833333333333,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5304501323919" />
+                    End="0,27.126213592233" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.5304501323919"
-                    Point2="0,31.5304501323919"
-                    Point3="4,31.5304501323919" />
+                    Point1="0,27.126213592233"
+                    Point2="0,31.126213592233"
+                    Point3="4,31.126213592233" />
                   <mssgle:LineSegment
-                    End="120.833333333333,31.5304501323919" />
+                    End="119.833333333333,31.126213592233" />
                   <mssgle:CubicBezierSegment
-                    Point1="120.833333333333,31.5304501323919"
-                    Point2="124.833333333333,31.5304501323919"
-                    Point3="124.833333333333,35.5304501323919" />
+                    Point1="119.833333333333,31.126213592233"
+                    Point2="123.833333333333,31.126213592233"
+                    Point3="123.833333333333,35.126213592233" />
                   <mssgle:LineSegment
-                    End="124.833333333333,70.5" />
+                    End="123.833333333333,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5167,15 +4472,83 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="201,42"
-          Id="Package\Data Flow Task\Read in beeravaliabilities"
-          TopLeft="143,58" />
+          Size="170,42"
+          Id="Package\Data Flow Task\Read in costumers"
+          TopLeft="1066,58" />
         <NodeLayout
           Size="230,42"
           Id="Package\Data Flow Task\Send to STG_beeravaliabilities"
           TopLeft="130,176" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Data Flow Task\Read in stylecategories"
+          TopLeft="844,278" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow Task\Read in countries"
+          TopLeft="164,253" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Data Flow Task\Read in breweries"
+          TopLeft="583,57" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Data Flow Task\Send to STG_styles"
+          TopLeft="1082,377" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Data Flow Task\Send to STG_costumers"
+          TopLeft="1049,175" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Data Flow Task\Read in beers"
+          TopLeft="384,56" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Data Flow Task\Read in styles"
+          TopLeft="1096,278" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\Read in locations"
+          TopLeft="384,251" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Data Flow Task\Read in breweryservices"
+          TopLeft="812,58" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Data Flow Task\Send to STG_beers"
+          TopLeft="374,177" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Data Flow Task\Send to STG_breweries"
+          TopLeft="572,177" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Data Flow Task\Send to STG_countries"
+          TopLeft="151,373" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Data Flow Task\Send to STG_locations"
+          TopLeft="369,374" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Data Flow Task\Send to STG_servingtypes"
+          TopLeft="598,375" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Data Flow Task\Read in servingtypes"
+          TopLeft="617,247" />
+        <NodeLayout
+          Size="222,43"
+          Id="Package\Data Flow Task\Send to STG_stylecategories"
+          TopLeft="829,375" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Data Flow Task\Read in beeravaliabilities"
+          TopLeft="143,58" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="244.25,100">
@@ -5198,17 +4571,97 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Data Flow Task\Read in beers"
-          TopLeft="385,57" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Data Flow Task\Send to STG_beers"
-          TopLeft="374,177" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
-          TopLeft="460.25,99">
+          Id="Package\Data Flow Task.Paths[Flat File Source Output8]"
+          TopLeft="1170.25,320">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output7]"
+          TopLeft="940.25,320">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output6]"
+          TopLeft="705.5,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86"
+              Start="0,0"
+              End="0,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output5]"
+          TopLeft="465.25,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81"
+              Start="0,0"
+              End="0,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output4]"
+          TopLeft="246.75,295">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5228,14 +4681,28 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Data Flow Task\Read in breweries"
-          TopLeft="583,57" />
-        <NodeLayout
-          Size="196,42"
-          Id="Package\Data Flow Task\Send to STG_breweries"
-          TopLeft="572,177" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output3]"
+          TopLeft="1149.75,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75"
+              Start="0,0"
+              End="0,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output2]"
           TopLeft="668.5,99">
@@ -5258,16 +4725,34 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Data Flow Task\Read in breweryservices"
-          TopLeft="812,58" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
+          TopLeft="459.75,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
           Size="228,42"
           Id="Package\Data Flow Task\Send to STG_breweryservices"
           TopLeft="799,175" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output3]"
+          Id="Package\Data Flow Task.Paths[Flat File Source Output9]"
           TopLeft="912.25,100">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5288,293 +4773,37 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Data Flow Task\Read in costumers"
-          TopLeft="164,270" />
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Data Flow Task\Send to STG_costumers"
-          TopLeft="147,387" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output4]"
-          TopLeft="247.75,312">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,75"
-              Start="0,0"
-              End="0,67.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Data Flow Task\Read in countries"
-          TopLeft="383,268" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Data Flow Task\Send to STG_countries"
-          TopLeft="370,388" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output5]"
-          TopLeft="465.75,310">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,78"
-              Start="0,0"
-              End="0,70.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,70.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,27.25,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow Task\Read in locations"
-          TopLeft="911,287" />
-        <NodeLayout
-          Size="192,42"
-          Id="Package\Data Flow Task\Send to STG_locations"
-          TopLeft="913,387" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output6]"
-          TopLeft="992.5,329">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16.5,58"
-              Start="0,0"
-              End="16.5,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="12.5,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.5,29"
-                    Point2="16.5,29"
-                    Point3="16.5,33" />
-                  <mssgle:LineSegment
-                    End="16.5,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0.25,34,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Data Flow Task\Read in servingtypes"
-          TopLeft="168,507" />
-        <NodeLayout
-          Size="210,42"
-          Id="Package\Data Flow Task\Send to STG_servingtypes"
-          TopLeft="170,607" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output7]"
-          TopLeft="259,549">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16,58"
-              Start="0,0"
-              End="16,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="12,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12,29"
-                    Point2="16,29"
-                    Point3="16,33" />
-                  <mssgle:LineSegment
-                    End="16,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,34,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Data Flow Task\Read in stylecategories"
-          TopLeft="345,514" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\Data Flow Task\Send to STG_stylecategories"
-          TopLeft="347,614" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output8]"
-          TopLeft="441.5,556">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16.5,58"
-              Start="0,0"
-              End="16.5,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="12.5,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.5,29"
-                    Point2="16.5,29"
-                    Point3="16.5,33" />
-                  <mssgle:LineSegment
-                    End="16.5,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0.25,34,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="148,42"
-          Id="Package\Data Flow Task\Read in styles"
-          TopLeft="584,518" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow Task\Send to STG_styles"
-          TopLeft="586,618" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output9]"
-          TopLeft="658,560">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16.5,58"
-              Start="0,0"
-              End="16.5,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="12.5,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.5,29"
-                    Point2="16.5,29"
-                    Point3="16.5,33" />
-                  <mssgle:LineSegment
-                    End="16.5,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0.25,34,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Data Flow Task\Read in users"
-          TopLeft="832,516" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Data Flow Task\Send to STG_users"
-          TopLeft="834,616" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output10]"
-          TopLeft="905.5,558">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16,58"
-              Start="0,0"
-              End="16,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="12,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12,29"
-                    Point2="16,29"
-                    Point3="16,33" />
-                  <mssgle:LineSegment
-                    End="16,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,34,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Send to STG_beeravaliabilities">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Send to STG_styles">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Send to STG_costumers">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5613,7 +4842,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Send to STG_breweryservices">
+    design-time-name="Package\Data Flow Task\Send to STG_countries">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5626,7 +4855,33 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Send to STG_costumers">
+    design-time-name="Package\Data Flow Task\Send to STG_locations">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Send to STG_servingtypes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Send to STG_stylecategories">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
