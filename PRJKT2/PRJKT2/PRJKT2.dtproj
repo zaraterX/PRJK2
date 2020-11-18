@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-5SV25GL</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAfwi+ncjSkKS5I+jJPIveAAAAAACAAAAAAAQZgAAAAEAACAAAACfT4uxX9TS7LPAnwoetNhSnNZLYz5ihRV+4lZs6OYhkwAAAAAOgAAAAAIAACAAAABFoOQF7u5YehZx4kAS88Xz2kevXav6982i9gFg5ZbGI5AAAADS5TC8zIMj9DKP6XHvzRcqgojUMC38YIVBjkep5XStLhgd/5BcwuB5UCOWtNBAP5/mwuvwHs1j121m4fXtMZ7amAeaB/6oVc0D+E9Fsmn4wDSEWUukTvlT0GfQLyaWgonp6CLXzsLXnhGjKOsVCpFVEIl2tkwcEpAxZ9XgQs2JYaon6/ddbMJBrVhpaGlYCZhAAAAAFaHT8/XCN6q1ueQZLUI++GOcUlPbrga3Khz4AGecnToYgfIqHl5UFBbWJAzcWE0sDR79e0wfILkdcdwpTh99FA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAfwi+ncjSkKS5I+jJPIveAAAAAACAAAAAAAQZgAAAAEAACAAAAB64Hh+17DIxINKkl1nkHYI2II0zssK1gTYLLd0hfP+2QAAAAAOgAAAAAIAACAAAAClN2MU7f6XjNrvmjZoQdcp5xcgkzawqJMxwGak2ONU/pAAAAB/s4hXvHaIK6et9497Q4QSFPD+iORWx50S/uwvcIQY84PBDx+P+i7PpiIzbwEDrPw4+2H6h8hAwqGuMK4aO0mvaNRWrXkhbRIUYsB7cIm5RJlKLYHfBHossaXlMGRore+s+n6ho0kwGxnQWbnzd8mU+cee9BTLk9JVOdylZ/aMBlcFsavXqr36m1i/heDfIwNAAAAAIvNKEK/hLI/39KhwHOd5XN8KSb0zQAcp6cw8hh88WYJsD16khylDFoQHX1BiBK/7RRRb+HA1FLJ8p+qQecP7cw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -43,10 +43,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">65</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">70</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4BC297F9-774C-461D-8C11-3836E69B3F9F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D6537BEB-4E31-4169-BC89-E515BDE98B81}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2164,17 +2164,17 @@
                 <SSIS:Property SSIS:Name="Name">B_DW_load</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">47</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F2B41810-E226-415A-A602-A2CA5313F303}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{83748DDF-3E74-4AAB-9058-C29BD86148C7}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.asd.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2189,7 +2189,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.asd.ConnectionString">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2200,11 +2200,11 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=.;User ID=asd;Initial Catalog=A_STG;Provider=SQLNCLI11.1;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=A_STG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.asd.ConnectUsingManagedIdentity">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.ConnectUsingManagedIdentity">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2219,7 +2219,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.asd.InitialCatalog">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.InitialCatalog">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2234,7 +2234,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.asd.Password">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.Password">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2248,7 +2248,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.asd.RetainSameConnection">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.RetainSameConnection">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2263,7 +2263,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.asd.ServerName">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.ServerName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2278,7 +2278,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.asd.UserName">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.A_STG.UserName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2289,11 +2289,10 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">asd</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.asd.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2308,7 +2307,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.asd.ConnectionString">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2319,11 +2318,11 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=.;User ID=asd;Initial Catalog=B_DW;Provider=SQLNCLI11.1;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=B_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.asd.ConnectUsingManagedIdentity">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.ConnectUsingManagedIdentity">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2338,7 +2337,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.asd.InitialCatalog">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.InitialCatalog">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2353,7 +2352,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.asd.Password">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.Password">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2367,7 +2366,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.asd.RetainSameConnection">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.RetainSameConnection">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2382,7 +2381,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.asd.ServerName">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.ServerName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2397,7 +2396,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.asd.UserName">
+                <SSIS:Parameter SSIS:Name="CM.LocalHost.B_DW.UserName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -2408,7 +2407,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">asd</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

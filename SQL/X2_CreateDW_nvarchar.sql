@@ -18,11 +18,11 @@ DROP TABLE IF EXISTS B_DW.dbo.DW_styles
 
 CREATE TABLE B_DW.dbo.DW_beeravaliabilities(
 availability_id INT,
-availability_category varchar(256))
+availability_category nvarchar(256))
 
 CREATE TABLE B_DW.dbo.DW_beers(
 beer_id INT,
-beer_name varchar(256),
+beer_name nvarchar(256),
 brewery_id INT,
 location_id INT,
 style_id INT,
@@ -32,7 +32,7 @@ retired INT)
 
 CREATE TABLE B_DW.dbo.DW_breweries(
 brewery_id INT,
-brewery_name varchar(256),
+brewery_name nvarchar(256),
 location_id INT)
 
 CREATE TABLE B_DW.dbo.DW_breweryservices(
@@ -40,28 +40,28 @@ brewery_id INT,
 serving_type tinyint)
 
 CREATE TABLE B_DW.dbo.DW_costumers(
-usr_name varchar(256),
-first_name varchar(256),
-last_name varchar(256),
-email varchar(256),
+usr_name nvarchar(256),
+first_name nvarchar(256),
+last_name nvarchar(256),
+email nvarchar(256),
 location_id INT)
 
 CREATE TABLE B_DW.dbo.DW_countries(
-country_code varchar(256),
-country_name varchar(256),
-region varchar(256),
-sub_region varchar(256),
-intermediate_region varchar(256))
+country_code nvarchar(256),
+country_name nvarchar(256),
+region nvarchar(256),
+sub_region nvarchar(256),
+intermediate_region nvarchar(256))
 
 CREATE TABLE B_DW.dbo.DW_locations(
 location_id INT,
-city varchar(256),
-stat varchar(256),
-country_code varchar(256))
+city nvarchar(256),
+stat nvarchar(256),
+country_code nvarchar(256))
 
 CREATE TABLE B_DW.dbo.DW_reviews(
 beer_id INT,
-usr_name varchar(256),
+usr_name nvarchar(256),
 review_date DATE,
 look INT,
 smell INT,
@@ -72,15 +72,15 @@ score INT)
 
 CREATE TABLE B_DW.dbo.DW_servingtypes(
 serving_id INT,
-serving_category varchar(256))
+serving_category nvarchar(256))
 
 CREATE TABLE B_DW.dbo.DW_stylecategories(
 category_id INT,
-style_category varchar(256))
+style_category nvarchar(256))
 
 CREATE TABLE B_DW.dbo.DW_styles(
 style_id INT,
-style_name varchar(256),
+style_name nvarchar(256),
 category_type INT,
 ibu_lower INT,
 ibu_high INT,
