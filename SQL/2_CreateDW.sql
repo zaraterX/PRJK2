@@ -63,12 +63,12 @@ CREATE TABLE B_DW.dbo.DW_reviews(
 beer_id INT,
 usr_name varchar(256),
 review_date DATE,
-look INT,
-smell INT,
-taste INT,
-feel INT,
-overall INT,
-score INT)
+look NUMERIC(38,2),
+smell NUMERIC(38,2),
+taste NUMERIC(38,2),
+feel NUMERIC(38,2),
+overall NUMERIC(38,2),
+score NUMERIC(38,2))
 
 CREATE TABLE B_DW.dbo.DW_servingtypes(
 serving_id INT,

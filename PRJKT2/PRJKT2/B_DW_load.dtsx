@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="B_DW_load"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{BDEF4BC5-5498-4079-8DF0-F565AB7A748C}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{532F2A31-1D5C-4305-AAC7-97D1AFF3CB4B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,6 +43,7 @@
       DTS:refId="Package\Conversion"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{AE26C822-6F40-4A39-8E07-2D460F899B88}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -363,6 +364,110 @@
                       refId="Package\Conversion\Convert beers.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Conversion\Convert beers.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conversion\Convert breweries"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert breweries"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Conversion\Convert breweries.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conversion\Convert breweries.Inputs[Data Conversion Input].Columns[brewery_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="brewery_id"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[brewery_id]" />
+                    <inputColumn
+                      refId="Package\Conversion\Convert breweries.Inputs[Data Conversion Input].Columns[location_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="location_id"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[location_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Conversion\Convert breweries.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output].Columns[Copy of brewery_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output].Columns[Copy of brewery_id]"
+                      name="Copy of brewery_id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[brewery_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output].Columns[Copy of location_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output].Columns[Copy of location_id]"
+                      name="Copy of location_id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[location_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conversion\Convert breweries.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Conversion\Convert breweries.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conversion\Convert breweries.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conversion\Convert breweries.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conversion\Convert breweries.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conversion\Convert breweries.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1488,6 +1593,166 @@
                       refId="Package\Conversion\Read in STG_beers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Conversion\Read in STG_beers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conversion\Read in STG_breweries"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Read in STG_breweries"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_breweries]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Conversion\Read in STG_breweries.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.A_STG]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.A_STG]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[brewery_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].ExternalColumns[brewery_id]"
+                      length="256"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[brewery_id]"
+                      name="brewery_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[brewery_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].ExternalColumns[brewery_name]"
+                      length="256"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[brewery_name]"
+                      name="brewery_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[location_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].ExternalColumns[location_id]"
+                      length="256"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[location_id]"
+                      name="location_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].ExternalColumns[brewery_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="brewery_id" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].ExternalColumns[brewery_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="brewery_name" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].ExternalColumns[location_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="location_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[brewery_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[brewery_id]"
+                      name="brewery_id" />
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[brewery_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[brewery_name]"
+                      name="brewery_name" />
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[location_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[location_id]"
+                      name="location_id" />
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3159,6 +3424,148 @@
               </outputs>
             </component>
             <component
+              refId="Package\Conversion\Send to DW_breweries"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Send to DW_breweries"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DW_breweries]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Conversion\Send to DW_breweries.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.B_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.B_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].Columns[brewery_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="brewery_name"
+                      externalMetadataColumnId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].ExternalColumns[brewery_name]"
+                      lineageId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output].Columns[brewery_name]" />
+                    <inputColumn
+                      refId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].Columns[Copy of brewery_id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of brewery_id"
+                      externalMetadataColumnId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
+                      lineageId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output].Columns[Copy of brewery_id]" />
+                    <inputColumn
+                      refId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].Columns[Copy of location_id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of location_id"
+                      externalMetadataColumnId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
+                      lineageId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output].Columns[Copy of location_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
+                      dataType="i4"
+                      name="brewery_id" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].ExternalColumns[brewery_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="brewery_name" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
+                      dataType="i4"
+                      name="location_id" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input].ExternalColumns[LoadTimeStamp]"
+                      dataType="bytes"
+                      length="8"
+                      name="LoadTimeStamp" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conversion\Send to DW_breweries.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conversion\Send to DW_breweries.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conversion\Send to DW_breweries.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conversion\Send to DW_breweries.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conversion\Send to DW_breweries.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Conversion\Send to DW_breweryservices"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -4289,15 +4696,40 @@
           </components>
           <paths>
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output3]"
-              endId="Package\Conversion\Send to DW_servingtypes.Inputs[OLE DB Destination Input]"
+              refId="Package\Conversion.Paths[Data Conversion Output8]"
+              endId="Package\Conversion\Send to DW_breweries.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
-              startId="Package\Conversion\Convert servingtypes.Outputs[Data Conversion Output]" />
+              startId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Conversion.Paths[Data Conversion Output7]"
+              endId="Package\Conversion\Send to DW_beers.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert beers.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Conversion.Paths[Data Conversion Output]"
+              endId="Package\Conversion\Send to DW_breweryservices.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert breweryservices.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Conversion.Paths[Data Conversion Output1]"
+              endId="Package\Conversion\Send to DW_beeravaliabilities.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert beeravaliabilities.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Conversion.Paths[Data Conversion Output2]"
+              endId="Package\Conversion\Send to DW_costumers.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert costumers.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Conversion.Paths[Data Conversion Output6]"
               endId="Package\Conversion\Send to DW_styles.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert styles.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Conversion.Paths[Data Conversion Output3]"
+              endId="Package\Conversion\Send to DW_servingtypes.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert servingtypes.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Conversion.Paths[Data Conversion Output5]"
               endId="Package\Conversion\Send to DW_stylecategories.Inputs[OLE DB Destination Input]"
@@ -4309,65 +4741,50 @@
               name="Data Conversion Output"
               startId="Package\Conversion\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output2]"
-              endId="Package\Conversion\Send to DW_costumers.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert costumers.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[Data Conversion Output7]"
-              endId="Package\Conversion\Send to DW_beers.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert beers.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[Data Conversion Output1]"
-              endId="Package\Conversion\Send to DW_beeravaliabilities.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert beeravaliabilities.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[Data Conversion Output]"
-              endId="Package\Conversion\Send to DW_breweryservices.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert breweryservices.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output3]"
-              endId="Package\Conversion\Send to DW_countries.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_countries.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output4]"
-              endId="Package\Conversion\Convert servingtypes.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_servingtypes.Outputs[OLE DB Source Output]" />
-            <path
               refId="Package\Conversion.Paths[OLE DB Source Output8]"
               endId="Package\Conversion\Convert beers.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_beers.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output5]"
-              endId="Package\Conversion\Data Conversion 1.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_locations.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output6]"
-              endId="Package\Conversion\Convert stylecategories.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Conversion.Paths[OLE DB Source Output7]"
               endId="Package\Conversion\Convert styles.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_styles.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output1]"
-              endId="Package\Conversion\Convert breweryservices.Inputs[Data Conversion Input]"
+              refId="Package\Conversion.Paths[OLE DB Source Output5]"
+              endId="Package\Conversion\Data Conversion 1.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_breweryservices.Outputs[OLE DB Source Output]" />
+              startId="Package\Conversion\Read in STG_locations.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output9]"
+              endId="Package\Conversion\Convert breweries.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output4]"
+              endId="Package\Conversion\Convert servingtypes.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_servingtypes.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output3]"
+              endId="Package\Conversion\Send to DW_countries.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_countries.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Conversion.Paths[OLE DB Source Output2]"
               endId="Package\Conversion\Convert costumers.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_costumers.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output1]"
+              endId="Package\Conversion\Convert breweryservices.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_breweryservices.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output6]"
+              endId="Package\Conversion\Convert stylecategories.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Conversion.Paths[OLE DB Source Output]"
               endId="Package\Conversion\Convert beeravaliabilities.Inputs[Data Conversion Input]"
@@ -4393,10 +4810,33 @@
           version="1">
           <components>
             <component
+              refId="Package\Data Flow Task\Copy Column"
+              componentClassID="Microsoft.CopyMap"
+              contactInfo="Copy Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Copies input columns to new columns in the transformation output. For example, create a copy of the 'address' column so that it can be cleaned by subsequent transformations and leave the original column in place for auditing."
+              name="Copy Column">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Copy Column.Inputs[Copy Column Input]"
+                  name="Copy Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Copy Column.Outputs[Copy Column Output]"
+                  name="Copy Column Output"
+                  synchronousInputId="Package\Data Flow Task\Copy Column.Inputs[Copy Column Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Task\Data Conversion"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
+              localeId="2057"
               name="Data Conversion"
               usesDispositions="true">
               <inputs>
@@ -4405,61 +4845,12 @@
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[beer_id]"
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[review_date]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="256"
-                      cachedName="beer_id"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[beer_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[brewery_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="brewery_id"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[brewery_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[location_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="location_id"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[location_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[style_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="style_id"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[style_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[availability_type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="availability_type"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[availability_type]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[abv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="abv"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[abv]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[retired]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="retired"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[retired]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[beer_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="beer_name"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[beer_name]" />
+                      cachedName="review_date"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[review_date]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -4472,162 +4863,19 @@
                   synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of beer_id]"
-                      dataType="i4"
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of review_date]"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of beer_id]"
-                      name="Copy of beer_id"
-                      truncationRowDisposition="IgnoreFailure">
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of review_date]"
+                      name="Copy of review_date"
+                      truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[beer_id]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of brewery_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of brewery_id]"
-                      name="Copy of brewery_id"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[brewery_id]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of location_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of location_id]"
-                      name="Copy of location_id"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[location_id]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of style_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of style_id]"
-                      name="Copy of style_id"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[style_id]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of availability_type]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of availability_type]"
-                      name="Copy of availability_type"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[availability_type]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of abv]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of abv]"
-                      name="Copy of abv"
-                      scale="2"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[abv]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of retired]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of retired]"
-                      name="Copy of retired"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[retired]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of beer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of beer_name]"
-                      name="Copy of beer_name"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[beer_name]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[review_date]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -4662,201 +4910,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DW_beers]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.B_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.B_DW]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of beer_id]"
-                      cachedDataType="i4"
-                      cachedName="Copy of beer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of beer_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of brewery_id]"
-                      cachedDataType="i4"
-                      cachedName="Copy of brewery_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of brewery_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of location_id]"
-                      cachedDataType="i4"
-                      cachedName="Copy of location_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of location_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of style_id]"
-                      cachedDataType="i4"
-                      cachedName="Copy of style_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of style_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of availability_type]"
-                      cachedDataType="i4"
-                      cachedName="Copy of availability_type"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of availability_type]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of abv]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of abv"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of abv]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of retired]"
-                      cachedDataType="bool"
-                      cachedName="Copy of retired"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of retired]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of beer_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="Copy of beer_name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of beer_name]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      dataType="i4"
-                      name="beer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="beer_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[brewery_id]"
-                      dataType="i4"
-                      name="brewery_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[location_id]"
-                      dataType="i4"
-                      name="location_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[style_id]"
-                      dataType="i4"
-                      name="style_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[availability_type]"
-                      dataType="i4"
-                      name="availability_type" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[abv]"
-                      dataType="numeric"
-                      name="abv"
-                      precision="38"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
-                      dataType="i4"
-                      name="retired" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadTimeStamp]"
-                      dataType="bytes"
-                      length="8"
-                      name="LoadTimeStamp" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Data Flow Task\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -4872,7 +4925,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_beers]</property>
+                  name="OpenRowset">[dbo].[STG_reviews]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4929,81 +4982,92 @@
                       name="beer_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[beer_name]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[usr_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[beer_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[usr_name]"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[beer_name]"
-                      name="beer_name"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[usr_name]"
+                      name="usr_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[brewery_id]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[review_date]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[brewery_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[review_date]"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[brewery_id]"
-                      name="brewery_id"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[review_date]"
+                      name="review_date"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[location_id]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[look]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[location_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[look]"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[location_id]"
-                      name="location_id"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[look]"
+                      name="look"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[style_id]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[smell]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[style_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[smell]"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[style_id]"
-                      name="style_id"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[smell]"
+                      name="smell"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[availability_type]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[taste]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[availability_type]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[taste]"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[availability_type]"
-                      name="availability_type"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[taste]"
+                      name="taste"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[abv]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[feel]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[abv]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[feel]"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[abv]"
-                      name="abv"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[feel]"
+                      name="feel"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[retired]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[overall]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[retired]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[overall]"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[retired]"
-                      name="retired"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[overall]"
+                      name="overall"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[score]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[score]"
+                      length="256"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[score]"
+                      name="score"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -5015,47 +5079,53 @@
                       length="256"
                       name="beer_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[beer_name]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[usr_name]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="beer_name" />
+                      name="usr_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[brewery_id]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[review_date]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="brewery_id" />
+                      name="review_date" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[location_id]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[look]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="location_id" />
+                      name="look" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[style_id]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[smell]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="style_id" />
+                      name="smell" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[availability_type]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[taste]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="availability_type" />
+                      name="taste" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[abv]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[feel]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="abv" />
+                      name="feel" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[retired]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[overall]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      name="retired" />
+                      name="overall" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[score]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="score" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -5071,54 +5141,61 @@
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[beer_id]"
                       name="beer_id" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[beer_name]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[usr_name]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[beer_name]"
-                      name="beer_name" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[usr_name]"
+                      name="usr_name" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[brewery_id]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[review_date]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[brewery_id]"
-                      name="brewery_id" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[review_date]"
+                      name="review_date" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[location_id]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[look]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[location_id]"
-                      name="location_id" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[look]"
+                      name="look" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[style_id]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[smell]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[style_id]"
-                      name="style_id" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[smell]"
+                      name="smell" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[availability_type]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[taste]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[availability_type]"
-                      name="availability_type" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[taste]"
+                      name="taste" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[abv]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[feel]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[abv]"
-                      name="abv" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[feel]"
+                      name="feel" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[retired]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[overall]"
                       codePage="1252"
                       dataType="str"
                       length="256"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[retired]"
-                      name="retired" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[overall]"
+                      name="overall" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[score]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[score]"
+                      name="score" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -5140,7 +5217,7 @@
           <paths>
             <path
               refId="Package\Data Flow Task.Paths[Data Conversion Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\Copy Column.Inputs[Copy Column Input]"
               name="Data Conversion Output"
               startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
             <path
@@ -5766,6 +5843,62 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Conversion\Read in STG_breweries"
+          TopLeft="903,33" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Conversion\Send to DW_breweries"
+          TopLeft="911,227" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Conversion\Convert breweries"
+          TopLeft="918,136" />
+        <EdgeLayout
+          Id="Package\Conversion.Paths[OLE DB Source Output9]"
+          TopLeft="1001.5,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output8]"
+          TopLeft="1004.5,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -5981,33 +6114,29 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="200,160" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="200,254" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="209,66" />
+          TopLeft="217,67" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="219,186" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="284,108">
+          TopLeft="297.5,109">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52"
+              EndConnector="0,77"
               Start="0,0"
-              End="0,44.5">
+              End="0,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5" />
+                    End="0,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6016,45 +6145,39 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Data Flow Task\Copy Column"
+          TopLeft="227,304" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="280.5,202">
+          TopLeft="299.75,228">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8,52"
+              EndConnector="0,76"
               Start="0,0"
-              End="8,44.5">
+              End="0,68.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="4,26" />
-                  <mssgle:LineSegment
-                    End="4,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4,26"
-                    Point2="8,26"
-                    Point3="8,30" />
-                  <mssgle:LineSegment
-                    End="8,44.5" />
+                    End="0,68.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,26.25,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6081,6 +6204,32 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Conversion\Send to DW_beers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Read in STG_breweries">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Send to DW_breweries">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
