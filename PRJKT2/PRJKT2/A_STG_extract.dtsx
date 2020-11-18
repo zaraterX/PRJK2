@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{51AAF066-7182-4CEA-A594-C923A3268B25}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{5AA4CB6E-454E-4E83-B11B-BC777A0DB8CF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -77,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="beer_id"
-              DTS:DTSID="{5E775F22-702A-4CFE-81DC-8ECFC949AB17}"
+              DTS:DTSID="{C65D186E-C14D-4041-A7FB-FEDB806B76FB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="beer_name"
-              DTS:DTSID="{562C391B-A46D-4103-9032-8F967392572C}"
+              DTS:DTSID="{A1B35215-608F-4E9E-A43B-3A903B7D897E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="brewery_id"
-              DTS:DTSID="{738C855E-9B54-4CD6-8780-952CFD540F8D}"
+              DTS:DTSID="{F8493520-5B99-45E6-AE07-BDADFEE27D59}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +104,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="loc_id"
-              DTS:DTSID="{FD46186F-D2B3-400E-9957-BE234743345F}"
+              DTS:DTSID="{58D22595-07FA-4AE4-9353-D12A892EE73E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="style_id"
-              DTS:DTSID="{386ECCB8-4131-4857-A4FC-5E12F8C6B9FE}"
+              DTS:DTSID="{89AF8CF3-6CC1-45F3-A627-279C62722540}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -122,7 +122,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="availability_type"
-              DTS:DTSID="{6DE19D36-F1F5-43B6-916E-30B8637AF477}"
+              DTS:DTSID="{4DE81D76-AD32-4443-ACC7-878B2F30B6E1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -131,7 +131,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="abv"
-              DTS:DTSID="{84917B50-881B-4B93-9CFB-0A1B081049CC}"
+              DTS:DTSID="{A7C77F04-D0C5-4F6D-B0CF-4FC0B5E3A085}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="retired"
-              DTS:DTSID="{BE1279E4-31E3-46A1-8D42-54B268EAFBCC}"
+              DTS:DTSID="{C93C920D-D0B6-4947-9370-1A46EC708DB2}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -169,7 +169,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="brewery_id"
-              DTS:DTSID="{9C1BB3FC-CBA4-44E7-AD7B-08225B420FE9}"
+              DTS:DTSID="{80BCB067-54AC-4B9C-BD6D-C2DEA20446FC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -178,16 +178,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="brewery_name"
-              DTS:DTSID="{9CB61888-320B-4207-94D2-EE96EBB34CEC}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location_id"
-              DTS:DTSID="{0648F144-AA44-4B87-8A98-08DA4FD36B96}"
+              DTS:DTSID="{1A222842-E594-4C0D-A2DA-0C56AD181B30}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -195,8 +186,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="note"
-              DTS:DTSID="{BD3ACCAE-DD7A-4532-BEE4-76E32E30C699}"
+              DTS:ObjectName="location_id"
+              DTS:DTSID="{FC3B1323-7D7C-4948-947E-8D95396BB27A}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -851,7 +842,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].ExternalColumns[beer_name]"
-                      length="50"
+                      length="256"
                       lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[beer_name]"
                       name="beer_name"
                       truncationRowDisposition="FailComponent">
@@ -1198,12 +1189,6 @@
                       dataType="str"
                       length="50"
                       name="location_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in breweries.Outputs[Flat File Source Output].ExternalColumns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="note" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2773,7 +2758,7 @@
                       refId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].Columns[beer_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="256"
                       cachedName="beer_name"
                       externalMetadataColumnId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
                       lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[beer_name]" />
@@ -2870,12 +2855,6 @@
                       dataType="str"
                       length="256"
                       name="abv" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].ExternalColumns[notes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4000"
-                      name="notes" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].ExternalColumns[retired]"
                       codePage="1252"
@@ -3027,12 +3006,6 @@
                       dataType="str"
                       length="256"
                       name="brewery_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Send to STG_breweries.Inputs[OLE DB Destination Input].ExternalColumns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4000"
-                      name="note" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4262,7 +4235,6 @@
       DTS:refId="Package\LoadReviews"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:Disabled="True"
       DTS:DTSID="{87D1DECD-F6AC-420A-972C-B215FA6EB4CB}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
