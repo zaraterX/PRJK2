@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{278255F0-10E1-4708-BE75-70E7B024EA3A}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{51AAF066-7182-4CEA-A594-C923A3268B25}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -77,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="beer_id"
-              DTS:DTSID="{8B145910-8E7A-495A-8844-61635E641762}"
+              DTS:DTSID="{5E775F22-702A-4CFE-81DC-8ECFC949AB17}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="beer_name"
-              DTS:DTSID="{4FD731FB-3A19-43F0-9681-55B825599C21}"
+              DTS:DTSID="{562C391B-A46D-4103-9032-8F967392572C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="brewery_id"
-              DTS:DTSID="{D481D6E0-0028-4B4F-9174-7A794A0B6232}"
+              DTS:DTSID="{738C855E-9B54-4CD6-8780-952CFD540F8D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +104,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="loc_id"
-              DTS:DTSID="{D4D9E996-2CF3-408C-BE09-A05BE3511EFA}"
+              DTS:DTSID="{FD46186F-D2B3-400E-9957-BE234743345F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="style_id"
-              DTS:DTSID="{3845601B-69C3-429D-AE6C-3A20C6B53263}"
+              DTS:DTSID="{386ECCB8-4131-4857-A4FC-5E12F8C6B9FE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -122,7 +122,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="availability_type"
-              DTS:DTSID="{1295FD1C-4AE3-46B8-AEAE-88F7D10371B7}"
+              DTS:DTSID="{6DE19D36-F1F5-43B6-916E-30B8637AF477}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -131,16 +131,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="abv"
-              DTS:DTSID="{FCFBC1AB-63E9-4179-A4B7-18300E25C544}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="notes"
-              DTS:DTSID="{CAC494EA-CE09-419D-B428-BDCD3D30D220}"
+              DTS:DTSID="{84917B50-881B-4B93-9CFB-0A1B081049CC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +140,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="retired"
-              DTS:DTSID="{E70CB01F-0679-4CE8-B333-9DFE9B36FE1A}"
+              DTS:DTSID="{BE1279E4-31E3-46A1-8D42-54B268EAFBCC}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -860,7 +851,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].ExternalColumns[beer_name]"
-                      length="256"
+                      length="50"
                       lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[beer_name]"
                       name="beer_name"
                       truncationRowDisposition="FailComponent">
@@ -1052,12 +1043,6 @@
                       dataType="str"
                       length="50"
                       name="abv" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].ExternalColumns[notes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="notes" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].ExternalColumns[retired]"
                       codePage="1252"
@@ -2788,7 +2773,7 @@
                       refId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].Columns[beer_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="256"
+                      cachedLength="50"
                       cachedName="beer_name"
                       externalMetadataColumnId="Package\Data Flow Task\Send to STG_beers.Inputs[OLE DB Destination Input].ExternalColumns[beer_name]"
                       lineageId="Package\Data Flow Task\Read in beers.Outputs[Flat File Source Output].Columns[beer_name]" />
@@ -4474,65 +4459,73 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
-          Id="Package\Data Flow Task\Read in costumers"
-          TopLeft="1066,58" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Data Flow Task\Send to STG_beeravaliabilities"
-          TopLeft="130,176" />
+          Size="148,42"
+          Id="Package\Data Flow Task\Read in styles"
+          TopLeft="1096,278" />
         <NodeLayout
           Size="193,42"
           Id="Package\Data Flow Task\Read in stylecategories"
           TopLeft="844,278" />
         <NodeLayout
-          Size="164,42"
-          Id="Package\Data Flow Task\Read in countries"
-          TopLeft="164,253" />
+          Size="170,42"
+          Id="Package\Data Flow Task\Read in costumers"
+          TopLeft="1066,58" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Data Flow Task\Send to STG_breweries"
+          TopLeft="572,177" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Data Flow Task\Send to STG_beers"
+          TopLeft="374,177" />
+        <NodeLayout
+          Size="222,43"
+          Id="Package\Data Flow Task\Send to STG_stylecategories"
+          TopLeft="829,375" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Data Flow Task\Read in beeravaliabilities"
+          TopLeft="143,58" />
         <NodeLayout
           Size="168,42"
           Id="Package\Data Flow Task\Read in breweries"
           TopLeft="583,57" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow Task\Read in countries"
+          TopLeft="164,253" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Data Flow Task\Send to STG_countries"
+          TopLeft="151,373" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Data Flow Task\Read in beers"
+          TopLeft="384,56" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Data Flow Task\Send to STG_locations"
+          TopLeft="369,374" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Data Flow Task\Send to STG_breweryservices"
+          TopLeft="799,175" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\Read in locations"
+          TopLeft="384,251" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Data Flow Task\Send to STG_beeravaliabilities"
+          TopLeft="130,176" />
         <NodeLayout
           Size="177,42"
           Id="Package\Data Flow Task\Send to STG_styles"
           TopLeft="1082,377" />
         <NodeLayout
           Size="199,42"
-          Id="Package\Data Flow Task\Send to STG_costumers"
-          TopLeft="1049,175" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Data Flow Task\Read in beers"
-          TopLeft="384,56" />
-        <NodeLayout
-          Size="148,42"
-          Id="Package\Data Flow Task\Read in styles"
-          TopLeft="1096,278" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow Task\Read in locations"
-          TopLeft="384,251" />
-        <NodeLayout
-          Size="199,42"
           Id="Package\Data Flow Task\Read in breweryservices"
           TopLeft="812,58" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Data Flow Task\Send to STG_beers"
-          TopLeft="374,177" />
-        <NodeLayout
-          Size="196,42"
-          Id="Package\Data Flow Task\Send to STG_breweries"
-          TopLeft="572,177" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Data Flow Task\Send to STG_countries"
-          TopLeft="151,373" />
-        <NodeLayout
-          Size="192,42"
-          Id="Package\Data Flow Task\Send to STG_locations"
-          TopLeft="369,374" />
         <NodeLayout
           Size="210,42"
           Id="Package\Data Flow Task\Send to STG_servingtypes"
@@ -4542,27 +4535,23 @@
           Id="Package\Data Flow Task\Read in servingtypes"
           TopLeft="617,247" />
         <NodeLayout
-          Size="222,43"
-          Id="Package\Data Flow Task\Send to STG_stylecategories"
-          TopLeft="829,375" />
-        <NodeLayout
-          Size="201,42"
-          Id="Package\Data Flow Task\Read in beeravaliabilities"
-          TopLeft="143,58" />
+          Size="199,42"
+          Id="Package\Data Flow Task\Send to STG_costumers"
+          TopLeft="1049,175" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="244.25,100">
+          Id="Package\Data Flow Task.Paths[Flat File Source Output9]"
+          TopLeft="912.25,100">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76"
+              EndConnector="0,75"
               Start="0,0"
-              End="0,68.5">
+              End="0,67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,68.5" />
+                    End="0,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4747,24 +4736,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="228,42"
-          Id="Package\Data Flow Task\Send to STG_breweryservices"
-          TopLeft="799,175" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output9]"
-          TopLeft="912.25,100">
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="244.25,100">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,75"
+              EndConnector="0,76"
               Start="0,0"
-              End="0,67.5">
+              End="0,68.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,67.5" />
+                    End="0,68.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4777,33 +4762,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Send to STG_beeravaliabilities">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Send to STG_styles">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Send to STG_costumers">
+    design-time-name="Package\Data Flow Task\Send to STG_breweries">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4829,7 +4788,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Send to STG_breweries">
+    design-time-name="Package\Data Flow Task\Send to STG_stylecategories">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4868,6 +4827,32 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Send to STG_beeravaliabilities">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Send to STG_styles">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Send to STG_servingtypes">
     <Properties>
       <Property>
@@ -4881,7 +4866,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Send to STG_stylecategories">
+    design-time-name="Package\Data Flow Task\Send to STG_costumers">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

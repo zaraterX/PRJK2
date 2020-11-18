@@ -28,7 +28,6 @@ location_id INT,
 style_id INT,
 availability_type INT,
 abv NUMERIC(38,2),
-notes nvarchar(4000),
 retired INT)
 
 CREATE TABLE B_DW.dbo.DW_breweries(

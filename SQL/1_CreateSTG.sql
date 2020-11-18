@@ -28,14 +28,12 @@ location_id VARCHAR(256),
 style_id VARCHAR(256),
 availability_type VARCHAR(256),
 abv VARCHAR(256),
-notes VARCHAR(4000),
 retired VARCHAR(256))
 
 CREATE TABLE A_STG.dbo.STG_breweries(
 brewery_id VARCHAR(256),
 brewery_name VARCHAR(256),
-location_id VARCHAR(256),
-note VARCHAR(4000))
+location_id VARCHAR(256))
 
 CREATE TABLE A_STG.dbo.STG_breweryservices(
 brewery_id VARCHAR(256),
