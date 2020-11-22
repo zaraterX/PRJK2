@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="B_DW_load"
   DTS:PackageType="5"
-  DTS:VersionBuild="116"
-  DTS:VersionGUID="{B40F8DF5-55C6-48AB-B09D-8804A02CAD0D}">
+  DTS:VersionBuild="117"
+  DTS:VersionGUID="{CC816D73-FBFF-4351-8C4F-8805B82F8D29}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4853,7 +4853,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_reviews]</property>
+                  name="OpenRowset">[dbo].[DW_reviews]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4896,8 +4896,8 @@
               <connections>
                 <connection
                   refId="Package\Conversion\Send to DW_reviews.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.A_STG]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.A_STG]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.B_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.B_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4977,9 +4977,7 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
+                      dataType="i4"
                       name="beer_id" />
                     <externalMetadataColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[usr_name]"
@@ -4989,46 +4987,49 @@
                       name="usr_name" />
                     <externalMetadataColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[review_date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
+                      dataType="dbDate"
                       name="review_date" />
                     <externalMetadataColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[look]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="look" />
+                      dataType="numeric"
+                      name="look"
+                      precision="38"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[smell]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="smell" />
+                      dataType="numeric"
+                      name="smell"
+                      precision="38"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[taste]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="taste" />
+                      dataType="numeric"
+                      name="taste"
+                      precision="38"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[feel]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="feel" />
+                      dataType="numeric"
+                      name="feel"
+                      precision="38"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[overall]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="overall" />
+                      dataType="numeric"
+                      name="overall"
+                      precision="38"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[score]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="score" />
+                      dataType="numeric"
+                      name="score"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[LoadTimeStamp]"
+                      dataType="bytes"
+                      length="8"
+                      name="LoadTimeStamp" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5553,47 +5554,47 @@
               name="Data Conversion Output"
               startId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output8]"
+              refId="Package\Conversion.Paths[Data Conversion Output1]"
               endId="Package\Conversion\Send to DW_locations.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert locations.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output7]"
+              refId="Package\Conversion.Paths[Data Conversion Output2]"
               endId="Package\Conversion\Send to DW_stylecategories.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert stylecategories.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output6]"
+              refId="Package\Conversion.Paths[Data Conversion Output3]"
               endId="Package\Conversion\Send to DW_servingtypes.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert servingtypes.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output5]"
+              refId="Package\Conversion.Paths[Data Conversion Output4]"
               endId="Package\Conversion\Send to DW_styles.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert styles.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output9]"
+              refId="Package\Conversion.Paths[Data Conversion Output5]"
               endId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output3]"
+              refId="Package\Conversion.Paths[Data Conversion Output6]"
               endId="Package\Conversion\Send to DW_beeravaliabilities.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert beeravaliabilities.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output2]"
+              refId="Package\Conversion.Paths[Data Conversion Output7]"
               endId="Package\Conversion\Send to DW_breweryservices.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert breweryservices.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output1]"
+              refId="Package\Conversion.Paths[Data Conversion Output8]"
               endId="Package\Conversion\Send to DW_beers.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert beers.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output4]"
+              refId="Package\Conversion.Paths[Data Conversion Output9]"
               endId="Package\Conversion\Send to DW_costumers.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert costumers.Outputs[Data Conversion Output]" />
@@ -5608,52 +5609,52 @@
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_beers.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output2]"
+              refId="Package\Conversion.Paths[OLE DB Source Output1]"
               endId="Package\Conversion\Convert locations.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_locations.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output3]"
+              refId="Package\Conversion.Paths[OLE DB Source Output2]"
               endId="Package\Conversion\Convert breweries.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output4]"
+              refId="Package\Conversion.Paths[OLE DB Source Output3]"
               endId="Package\Conversion\Convert servingtypes.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_servingtypes.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output5]"
+              refId="Package\Conversion.Paths[OLE DB Source Output4]"
               endId="Package\Conversion\Send to DW_countries.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_countries.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output6]"
+              refId="Package\Conversion.Paths[OLE DB Source Output5]"
               endId="Package\Conversion\Convert costumers.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_costumers.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output7]"
+              refId="Package\Conversion.Paths[OLE DB Source Output6]"
               endId="Package\Conversion\Convert breweryservices.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_breweryservices.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output8]"
+              refId="Package\Conversion.Paths[OLE DB Source Output7]"
               endId="Package\Conversion\Convert stylecategories.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output9]"
+              refId="Package\Conversion.Paths[OLE DB Source Output8]"
               endId="Package\Conversion\Convert beeravaliabilities.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_beeravaliabilities.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output10]"
+              refId="Package\Conversion.Paths[OLE DB Source Output9]"
               endId="Package\Conversion\Convert date column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output1]"
+              refId="Package\Conversion.Paths[OLE DB Source Output10]"
               endId="Package\Conversion\Convert styles.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_styles.Outputs[OLE DB Source Output]" />
@@ -6687,21 +6688,13 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="176,42"
-          Id="Package\Conversion\Read in STG_beers"
-          TopLeft="617,569" />
+          Size="192,42"
+          Id="Package\Conversion\Read in STG_locations"
+          TopLeft="356,310" />
         <NodeLayout
-          Size="206,42"
-          Id="Package\Conversion\Send to DW_servingtypes"
-          TopLeft="622,492" />
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Conversion\Convert servingtypes"
-          TopLeft="627,402" />
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Conversion\Read in STG_costumers"
-          TopLeft="617,40" />
+          Size="196,42"
+          Id="Package\Conversion\Read in STG_breweries"
+          TopLeft="903,33" />
         <NodeLayout
           Size="210,42"
           Id="Package\Conversion\Read in STG_servingtypes"
@@ -6715,53 +6708,69 @@
           Id="Package\Conversion\Convert costumers"
           TopLeft="634,135" />
         <NodeLayout
+          Size="172,42"
+          Id="Package\Conversion\Send to DW_styles"
+          TopLeft="381,735" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Conversion\Convert styles"
+          TopLeft="398,652" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Conversion\Read in STG_countries"
+          TopLeft="67,308" />
+        <NodeLayout
           Size="224,42"
           Id="Package\Conversion\Send to DW_breweryservices"
           TopLeft="351,226" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Conversion\Read in STG_beeravaliabilities"
-          TopLeft="50,44" />
-        <NodeLayout
-          Size="228,42"
-          Id="Package\Conversion\Read in STG_breweryservices"
-          TopLeft="348,42" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\Conversion\Convert breweryservices"
-          TopLeft="357,134" />
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Conversion\Send to DW_locations"
-          TopLeft="353,492" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Conversion\Send to DW_beers"
-          TopLeft="618,732" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Conversion\Convert locations"
-          TopLeft="363,402" />
-        <NodeLayout
-          Size="192,42"
-          Id="Package\Conversion\Read in STG_locations"
-          TopLeft="356,310" />
         <NodeLayout
           Size="192,42"
           Id="Package\Conversion\Send to DW_breweries"
           TopLeft="911,227" />
         <NodeLayout
+          Size="200,42"
+          Id="Package\Conversion\Convert breweryservices"
+          TopLeft="357,134" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Conversion\Convert stylecategories"
+          TopLeft="86,651" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Conversion\Send to DW_servingtypes"
+          TopLeft="622,492" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Conversion\Send to DW_locations"
+          TopLeft="353,492" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Conversion\Send to DW_stylecategories"
+          TopLeft="81,733" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Conversion\Convert servingtypes"
+          TopLeft="627,402" />
+        <NodeLayout
           Size="168,42"
           Id="Package\Conversion\Convert breweries"
           TopLeft="918,136" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Conversion\Send to DW_styles"
-          TopLeft="381,735" />
+          Size="176,42"
+          Id="Package\Conversion\Read in STG_beers"
+          TopLeft="617,569" />
         <NodeLayout
-          Size="196,42"
-          Id="Package\Conversion\Read in STG_breweries"
-          TopLeft="903,33" />
+          Size="199,42"
+          Id="Package\Conversion\Read in STG_costumers"
+          TopLeft="617,40" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Conversion\Read in STG_reviews"
+          TopLeft="948,322" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Conversion\Convert date column"
+          TopLeft="949,443" />
         <NodeLayout
           Size="177,42"
           Id="Package\Conversion\Read in STG_styles"
@@ -6771,73 +6780,59 @@
           Id="Package\Conversion\Send to DW_countries"
           TopLeft="71,400" />
         <NodeLayout
-          Size="193,42"
-          Id="Package\Conversion\Read in STG_countries"
-          TopLeft="67,308" />
+          Size="230,42"
+          Id="Package\Conversion\Read in STG_beeravaliabilities"
+          TopLeft="50,44" />
         <NodeLayout
-          Size="218,42"
-          Id="Package\Conversion\Send to DW_stylecategories"
-          TopLeft="81,733" />
+          Size="228,42"
+          Id="Package\Conversion\Read in STG_breweryservices"
+          TopLeft="348,42" />
         <NodeLayout
-          Size="149,42"
-          Id="Package\Conversion\Convert styles"
-          TopLeft="398,652" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\Conversion\Read in STG_stylecategories"
-          TopLeft="74,568" />
+          Size="158,42"
+          Id="Package\Conversion\Convert reviews"
+          TopLeft="954,558" />
         <NodeLayout
           Size="148,42"
           Id="Package\Conversion\Convert beers"
           TopLeft="625,653" />
         <NodeLayout
-          Size="194,42"
-          Id="Package\Conversion\Convert stylecategories"
-          TopLeft="86,651" />
+          Size="222,42"
+          Id="Package\Conversion\Read in STG_stylecategories"
+          TopLeft="74,568" />
         <NodeLayout
-          Size="195,42"
-          Id="Package\Conversion\Send to DW_costumers"
-          TopLeft="618,225" />
+          Size="172,42"
+          Id="Package\Conversion\Send to DW_beers"
+          TopLeft="618,732" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Conversion\Send to DW_reviews"
+          TopLeft="947,670" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Conversion\Convert locations"
+          TopLeft="363,402" />
         <NodeLayout
           Size="202,42"
           Id="Package\Conversion\Convert beeravaliabilities"
           TopLeft="62,134" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Conversion\Send to DW_costumers"
+          TopLeft="618,225" />
         <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output1]"
-          TopLeft="701.5,695">
+          Id="Package\Conversion.Paths[OLE DB Source Output10]"
+          TopLeft="473,613">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37"
+              EndConnector="0,39"
               Start="0,0"
-              End="0,29.5">
+              End="0,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output]"
-          TopLeft="1004.5,178">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49"
-              Start="0,0"
-              End="0,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
+                    End="0,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6848,6 +6843,28 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output9]"
+          TopLeft="1040,364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[OLE DB Source Output8]"
           TopLeft="164,86">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6869,7 +6886,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output8]"
+          Id="Package\Conversion.Paths[OLE DB Source Output7]"
           TopLeft="184,610">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6891,7 +6908,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output7]"
+          Id="Package\Conversion.Paths[OLE DB Source Output6]"
           TopLeft="459.5,84">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6913,7 +6930,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output6]"
+          Id="Package\Conversion.Paths[OLE DB Source Output5]"
           TopLeft="718,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6935,7 +6952,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output5]"
+          Id="Package\Conversion.Paths[OLE DB Source Output4]"
           TopLeft="164.5,350">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6957,7 +6974,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output4]"
+          Id="Package\Conversion.Paths[OLE DB Source Output3]"
           TopLeft="721.5,354">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6979,7 +6996,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output3]"
+          Id="Package\Conversion.Paths[OLE DB Source Output2]"
           TopLeft="1001.5,75">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7001,7 +7018,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output2]"
+          Id="Package\Conversion.Paths[OLE DB Source Output1]"
           TopLeft="448.5,352">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7014,28 +7031,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output1]"
-          TopLeft="473,613">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7067,194 +7062,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output8]"
-          TopLeft="446,444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output7]"
-          TopLeft="186.5,693">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output6]"
-          TopLeft="721.5,444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output5]"
-          TopLeft="469.75,694">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41"
-              Start="0,0"
-              End="0,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output4]"
-          TopLeft="717.5,177">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output3]"
-          TopLeft="166.5,176">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output2]"
-          TopLeft="460,176">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Conversion\Read in STG_reviews"
-          TopLeft="948,322" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Conversion\Convert date column"
-          TopLeft="949,443" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Conversion\Convert reviews"
-          TopLeft="954,558" />
-        <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output10]"
-          TopLeft="1040,364">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79"
-              Start="0,0"
-              End="0,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Conversion.Paths[Derived Column Output]"
           TopLeft="1036,485">
           <EdgeLayout.Curve>
@@ -7276,12 +7083,96 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Conversion\Send to DW_reviews"
-          TopLeft="947,670" />
         <EdgeLayout
           Id="Package\Conversion.Paths[Data Conversion Output9]"
+          TopLeft="717.5,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output8]"
+          TopLeft="701.5,695">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output7]"
+          TopLeft="460,176">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output6]"
+          TopLeft="166.5,176">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output5]"
           TopLeft="1035.25,600">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7302,11 +7193,121 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output4]"
+          TopLeft="469.75,694">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output3]"
+          TopLeft="721.5,444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output2]"
+          TopLeft="186.5,693">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output1]"
+          TopLeft="446,444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[Data Conversion Output]"
+          TopLeft="1004.5,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_beers">
+    design-time-name="Package\Conversion\Read in STG_locations">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7319,20 +7320,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_servingtypes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_costumers">
+    design-time-name="Package\Conversion\Read in STG_breweries">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7371,72 +7359,33 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Send to DW_styles">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Read in STG_countries">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Conversion\Send to DW_breweryservices">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_beeravaliabilities">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_breweryservices">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_locations">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_beers">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_locations">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7462,7 +7411,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_styles">
+    design-time-name="Package\Conversion\Send to DW_servingtypes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7475,7 +7424,46 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_breweries">
+    design-time-name="Package\Conversion\Send to DW_locations">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Send to DW_stylecategories">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Read in STG_beers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Read in STG_costumers">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7514,7 +7502,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_countries">
+    design-time-name="Package\Conversion\Read in STG_beeravaliabilities">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7527,7 +7515,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_stylecategories">
+    design-time-name="Package\Conversion\Read in STG_breweryservices">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7541,6 +7529,32 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Conversion\Read in STG_stylecategories">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Send to DW_beers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Send to DW_reviews">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7569,15 +7583,7 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Data Flow Task\Read in STG_reviews"
-          TopLeft="462,233" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Data Flow Task\Convert date column"
-          TopLeft="463,354" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158,42"
           Id="Package\Data Flow Task\Convert reviews"
@@ -7586,6 +7592,14 @@
           Size="177,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="461,581" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Data Flow Task\Convert date column"
+          TopLeft="463,354" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow Task\Read in STG_reviews"
+          TopLeft="462,233" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="554,275">
@@ -7605,7 +7619,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7627,7 +7643,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7649,25 +7667,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_reviews">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
