@@ -76,7 +76,8 @@ serving_category VARCHAR(256))
 
 CREATE TABLE A_STG.dbo.STG_stylecategories(
 category_id VARCHAR(256),
-style_category VARCHAR(256))
+style_category VARCHAR(256),
+typePrice VARCHAR(256))
 
 CREATE TABLE A_STG.dbo.STG_styles(
 style_id VARCHAR(256),

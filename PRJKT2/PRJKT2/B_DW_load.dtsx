@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="B_DW_load"
   DTS:PackageType="5"
-  DTS:VersionBuild="117"
-  DTS:VersionGUID="{CC816D73-FBFF-4351-8C4F-8805B82F8D29}">
+  DTS:VersionBuild="148"
+  DTS:VersionGUID="{986DA4CB-AF3D-4D8B-A232-8284079137F3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1157,6 +1157,13 @@
                       cachedLength="256"
                       cachedName="category_id"
                       lineageId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output].Columns[category_id]" />
+                    <inputColumn
+                      refId="Package\Conversion\Convert stylecategories.Inputs[Data Conversion Input].Columns[typePrice]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="typePrice"
+                      lineageId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output].Columns[typePrice]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1182,6 +1189,26 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output].Columns[category_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conversion\Convert stylecategories.Outputs[Data Conversion Output].Columns[Copy of typePrice]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Conversion\Convert stylecategories.Outputs[Data Conversion Output].Columns[Copy of typePrice]"
+                      name="Copy of typePrice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output].Columns[typePrice]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -3347,6 +3374,17 @@
                       lineageId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output].Columns[style_category]"
                       name="style_category"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output].Columns[typePrice]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output].ExternalColumns[typePrice]"
+                      length="256"
+                      lineageId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output].Columns[typePrice]"
+                      name="typePrice"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3362,6 +3400,12 @@
                       dataType="str"
                       length="256"
                       name="style_category" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output].ExternalColumns[typePrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="typePrice" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3383,6 +3427,13 @@
                       length="256"
                       lineageId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Error Output].Columns[style_category]"
                       name="style_category" />
+                    <outputColumn
+                      refId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Error Output].Columns[typePrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Error Output].Columns[typePrice]"
+                      name="typePrice" />
                     <outputColumn
                       refId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -3902,7 +3953,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">true</property>
+                  name="FastLoadKeepIdentity">false</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
@@ -4027,6 +4078,10 @@
                       dataType="bytes"
                       length="8"
                       name="LoadTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Send to DW_beers.Inputs[OLE DB Destination Input].ExternalColumns[brewPrice]"
+                      dataType="cy"
+                      name="brewPrice" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5030,6 +5085,10 @@
                       dataType="bytes"
                       length="8"
                       name="LoadTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[priceTag]"
+                      dataType="cy"
+                      name="priceTag" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5276,6 +5335,12 @@
                       cachedName="Copy of category_id"
                       externalMetadataColumnId="Package\Conversion\Send to DW_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
                       lineageId="Package\Conversion\Convert stylecategories.Outputs[Data Conversion Output].Columns[Copy of category_id]" />
+                    <inputColumn
+                      refId="Package\Conversion\Send to DW_stylecategories.Inputs[OLE DB Destination Input].Columns[Copy of typePrice]"
+                      cachedDataType="i1"
+                      cachedName="Copy of typePrice"
+                      externalMetadataColumnId="Package\Conversion\Send to DW_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[typePrice]"
+                      lineageId="Package\Conversion\Convert stylecategories.Outputs[Data Conversion Output].Columns[Copy of typePrice]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5294,6 +5359,10 @@
                       dataType="bytes"
                       length="8"
                       name="LoadTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Conversion\Send to DW_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[typePrice]"
+                      dataType="ui1"
+                      name="typePrice" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5663,895 +5732,6 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{3248615F-4AF4-4451-BBC4-8A077B7781DD}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Data Flow Task\Convert date column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Convert date column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Convert date column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Convert date column.Inputs[Derived Column Input].Columns[review_date]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="review_date"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Convert date column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Output].Columns[date_review]"
-                      dataType="date"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Output].Columns[date_review]"
-                      name="date_review"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_DATE)([SUBSTRING](#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]},7,4) + "-" + [SUBSTRING](#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]},4,2) + "-" + [SUBSTRING](#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]},1,2) + "")</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_DATE)(SUBSTRING(review_date,7,4) + "-" + SUBSTRING(review_date,4,2) + "-" + SUBSTRING(review_date,1,2) + "")</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Convert date column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Convert reviews"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              localeId="1033"
-              name="Convert reviews"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input].Columns[beer_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="beer_id"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[beer_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input].Columns[look]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="look"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[look]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input].Columns[smell]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="smell"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[smell]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input].Columns[taste]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="taste"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[taste]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input].Columns[feel]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="feel"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[feel]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input].Columns[overall]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="overall"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[overall]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input].Columns[score]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="score"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[score]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of beer_id]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of beer_id]"
-                      name="Copy of beer_id"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[beer_id]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of look]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of look]"
-                      name="Copy of look"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[look]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of smell]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of smell]"
-                      name="Copy of smell"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[smell]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of taste]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of taste]"
-                      name="Copy of taste"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[taste]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of feel]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of feel]"
-                      name="Copy of feel"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[feel]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of overall]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of overall]"
-                      name="Copy of overall"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[overall]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of score]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of score]"
-                      name="Copy of score"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[score]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_reviews]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">true</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">true</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.A_STG]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.A_STG]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of beer_id]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of beer_id"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of beer_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[usr_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="usr_name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[usr_name]"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[usr_name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of look]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of look"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[look]"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of look]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date_review]"
-                      cachedDataType="date"
-                      cachedName="date_review"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_date]"
-                      lineageId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Output].Columns[date_review]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of smell]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of smell"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[smell]"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of smell]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of taste]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of taste"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[taste]"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of taste]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of feel]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of feel"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[feel]"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of feel]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of overall]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of overall"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[overall]"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of overall]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of score]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of score"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[score]"
-                      lineageId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of score]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="beer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[usr_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="usr_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[review_date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="review_date" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[look]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="look" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[smell]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="smell" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[taste]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="taste" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[feel]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="feel" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[overall]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="overall" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[score]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="score" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Read in STG_reviews"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="Read in STG_reviews"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STG_reviews]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Read in STG_reviews.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.A_STG]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.A_STG]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[beer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[beer_id]"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[beer_id]"
-                      name="beer_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[usr_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[usr_name]"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[usr_name]"
-                      name="usr_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[review_date]"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]"
-                      name="review_date"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[look]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[look]"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[look]"
-                      name="look"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[smell]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[smell]"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[smell]"
-                      name="smell"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[taste]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[taste]"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[taste]"
-                      name="taste"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[feel]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[feel]"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[feel]"
-                      name="feel"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[overall]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[overall]"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[overall]"
-                      name="overall"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[score]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[score]"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[score]"
-                      name="score"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[beer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="beer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[usr_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="usr_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[review_date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="review_date" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[look]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="look" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[smell]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="smell" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[taste]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="taste" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[feel]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="feel" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[overall]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="overall" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output].ExternalColumns[score]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      name="score" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[beer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[beer_id]"
-                      name="beer_id" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[usr_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[usr_name]"
-                      name="usr_name" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[review_date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[review_date]"
-                      name="review_date" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[look]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[look]"
-                      name="look" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[smell]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[smell]"
-                      name="smell" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[taste]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[taste]"
-                      name="taste" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[feel]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[feel]"
-                      name="feel" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[overall]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[overall]"
-                      name="overall" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[score]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[score]"
-                      name="score" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Data Flow Task\Convert reviews.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\Convert reviews.Inputs[Data Conversion Input]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task\Convert date column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\Convert date column.Inputs[Derived Column Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Read in STG_reviews.Outputs[OLE DB Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\SQL Task Truncate All Tables"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -6568,6 +5748,40 @@
           SQLTask:SqlStatementSource="EXEC sp_MsForEachTable 'Truncate Table ?'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update brewPrice"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{57DE5A90-C1FC-4254-B51A-A93F1E14C00E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update brewPrice"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{22FB40CA-BC54-431A-B27E-BEFCC9EF2277}"
+          SQLTask:SqlStatementSource="update&#xA;DW_beers&#xA;set&#xA;DW_beers.brewPrice = DW_stylecategories.typePrice*70+DW_stylecategories.typePrice* (ABS(CHECKSUM(NewId())) % 100)&#xA;from DW_beers&#xA;INNER JOIN DW_styles&#xA;&#x9;ON DW_beers.style_id = DW_styles.style_id&#xA;INNER JOIN DW_stylecategories&#xA;&#x9;ON DW_styles.category_type = DW_stylecategories.category_id&#xA;inner join Pricetag&#xA;on DW_beers.beer_id=Pricetag.beer_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update priceTag"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A88D5DE9-ABE4-4428-9903-23F8DD98DA58}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update priceTag"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{22FB40CA-BC54-431A-B27E-BEFCC9EF2277}"
+          SQLTask:SqlStatementSource="update&#xA;DW_reviews&#xA;set&#xA;DW_reviews.priceTag = (brewPrice*100+brewPrice*(1+((CHECKSUM(NewId())) % 15)))/100&#xA;from DW_reviews&#xA;INNER JOIN DW_beers&#xA;&#x9;ON DW_beers.beer_id = DW_reviews.beer_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -6579,13 +5793,21 @@
       DTS:ObjectName="Constraint"
       DTS:To="Package\Conversion" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{1239177D-C257-4004-8341-B616F6644E0C}"
-      DTS:From="Package\SQL Task Truncate All Tables"
+      DTS:DTSID="{1697241D-23FA-4E7A-85C3-2D85913B04A1}"
+      DTS:From="Package\Conversion"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Data Flow Task" />
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Update brewPrice" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{F068D4C9-BBC7-4518-A4B3-A5877812FAFB}"
+      DTS:From="Package\Update brewPrice"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Update priceTag" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -6602,41 +5824,25 @@
         <NodeLayout
           Size="135,42"
           Id="Package\Conversion"
-          TopLeft="431,163" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Data Flow Task"
-          TopLeft="664,165" />
+          TopLeft="560,135" />
         <NodeLayout
           Size="225,42"
           Id="Package\SQL Task Truncate All Tables"
           TopLeft="514,56" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="626.5,98">
+          TopLeft="627,98">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-128,65"
+              EndConnector="0,37"
               Start="0,0"
-              End="-128,57.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="-4,32.5" />
-                  <mssgle:LineSegment
-                    End="-124,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-124,32.5"
-                    Point2="-128,32.5"
-                    Point3="-128,36.5" />
-                  <mssgle:LineSegment
-                    End="-128,57.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6645,32 +5851,50 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Update brewPrice"
+          TopLeft="545,224" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="662.666666666667,98">
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="627.75,177">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.8333333333334,67"
+              EndConnector="0,47"
               Start="0,0"
-              End="78.8333333333334,59.5">
+              End="0,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.0838481906443" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.0838481906443"
-                    Point2="0,27.0838481906443"
-                    Point3="4,27.0838481906443" />
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Update priceTag"
+          TopLeft="553,308" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="630.5,266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="74.8333333333334,27.0838481906443" />
-                  <mssgle:CubicBezierSegment
-                    Point1="74.8333333333334,27.0838481906443"
-                    Point2="78.8333333333334,27.0838481906443"
-                    Point3="78.8333333333334,31.0838481906443" />
-                  <mssgle:LineSegment
-                    End="78.8333333333334,59.5" />
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6688,29 +5912,25 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="192,42"
-          Id="Package\Conversion\Read in STG_locations"
-          TopLeft="356,310" />
-        <NodeLayout
           Size="196,42"
           Id="Package\Conversion\Read in STG_breweries"
           TopLeft="903,33" />
         <NodeLayout
-          Size="210,42"
-          Id="Package\Conversion\Read in STG_servingtypes"
-          TopLeft="620,312" />
+          Size="180,42"
+          Id="Package\Conversion\Convert date column"
+          TopLeft="949,443" />
         <NodeLayout
           Size="226,42"
           Id="Package\Conversion\Send to DW_beeravaliabilities"
           TopLeft="57,226" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Conversion\Convert costumers"
-          TopLeft="634,135" />
+          Size="210,42"
+          Id="Package\Conversion\Read in STG_servingtypes"
+          TopLeft="620,312" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Conversion\Send to DW_styles"
-          TopLeft="381,735" />
+          Size="224,42"
+          Id="Package\Conversion\Send to DW_breweryservices"
+          TopLeft="351,226" />
         <NodeLayout
           Size="149,42"
           Id="Package\Conversion\Convert styles"
@@ -6720,13 +5940,13 @@
           Id="Package\Conversion\Read in STG_countries"
           TopLeft="67,308" />
         <NodeLayout
-          Size="224,42"
-          Id="Package\Conversion\Send to DW_breweryservices"
-          TopLeft="351,226" />
+          Size="171,42"
+          Id="Package\Conversion\Convert costumers"
+          TopLeft="634,135" />
         <NodeLayout
-          Size="192,42"
-          Id="Package\Conversion\Send to DW_breweries"
-          TopLeft="911,227" />
+          Size="188,42"
+          Id="Package\Conversion\Send to DW_locations"
+          TopLeft="353,492" />
         <NodeLayout
           Size="200,42"
           Id="Package\Conversion\Convert breweryservices"
@@ -6736,29 +5956,25 @@
           Id="Package\Conversion\Convert stylecategories"
           TopLeft="86,651" />
         <NodeLayout
-          Size="206,42"
-          Id="Package\Conversion\Send to DW_servingtypes"
-          TopLeft="622,492" />
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Conversion\Send to DW_locations"
-          TopLeft="353,492" />
-        <NodeLayout
           Size="218,42"
           Id="Package\Conversion\Send to DW_stylecategories"
           TopLeft="81,733" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Conversion\Send to DW_breweries"
+          TopLeft="911,227" />
         <NodeLayout
           Size="182,42"
           Id="Package\Conversion\Convert servingtypes"
           TopLeft="627,402" />
         <NodeLayout
-          Size="168,42"
-          Id="Package\Conversion\Convert breweries"
-          TopLeft="918,136" />
-        <NodeLayout
           Size="176,42"
           Id="Package\Conversion\Read in STG_beers"
           TopLeft="617,569" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Conversion\Convert breweries"
+          TopLeft="918,136" />
         <NodeLayout
           Size="199,42"
           Id="Package\Conversion\Read in STG_costumers"
@@ -6768,13 +5984,13 @@
           Id="Package\Conversion\Read in STG_reviews"
           TopLeft="948,322" />
         <NodeLayout
-          Size="180,42"
-          Id="Package\Conversion\Convert date column"
-          TopLeft="949,443" />
-        <NodeLayout
           Size="177,42"
           Id="Package\Conversion\Read in STG_styles"
           TopLeft="385,571" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Conversion\Send to DW_servingtypes"
+          TopLeft="622,492" />
         <NodeLayout
           Size="189,42"
           Id="Package\Conversion\Send to DW_countries"
@@ -6788,25 +6004,33 @@
           Id="Package\Conversion\Read in STG_breweryservices"
           TopLeft="348,42" />
         <NodeLayout
-          Size="158,42"
-          Id="Package\Conversion\Convert reviews"
-          TopLeft="954,558" />
-        <NodeLayout
-          Size="148,42"
-          Id="Package\Conversion\Convert beers"
-          TopLeft="625,653" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\Conversion\Read in STG_stylecategories"
-          TopLeft="74,568" />
+          Size="172,42"
+          Id="Package\Conversion\Send to DW_styles"
+          TopLeft="381,735" />
         <NodeLayout
           Size="172,42"
           Id="Package\Conversion\Send to DW_beers"
           TopLeft="618,732" />
         <NodeLayout
-          Size="181,42"
-          Id="Package\Conversion\Send to DW_reviews"
-          TopLeft="947,670" />
+          Size="158,42"
+          Id="Package\Conversion\Convert reviews"
+          TopLeft="954,558" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Conversion\Read in STG_stylecategories"
+          TopLeft="74,568" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Conversion\Read in STG_locations"
+          TopLeft="356,310" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Conversion\Convert beers"
+          TopLeft="625,653" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Conversion\Send to DW_costumers"
+          TopLeft="618,225" />
         <NodeLayout
           Size="164,42"
           Id="Package\Conversion\Convert locations"
@@ -6816,75 +6040,9 @@
           Id="Package\Conversion\Convert beeravaliabilities"
           TopLeft="62,134" />
         <NodeLayout
-          Size="195,42"
-          Id="Package\Conversion\Send to DW_costumers"
-          TopLeft="618,225" />
-        <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output10]"
-          TopLeft="473,613">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output9]"
-          TopLeft="1040,364">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79"
-              Start="0,0"
-              End="0,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output8]"
-          TopLeft="164,86">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="181,42"
+          Id="Package\Conversion\Send to DW_reviews"
+          TopLeft="947,670" />
         <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output7]"
           TopLeft="184,610">
@@ -7303,37 +6461,77 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[OLE DB Source Output10]"
+          TopLeft="473,613">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[OLE DB Source Output9]"
+          TopLeft="1040,364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[OLE DB Source Output8]"
+          TopLeft="164,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_locations">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Conversion\Read in STG_breweries">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_servingtypes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7359,20 +6557,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_styles">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_countries">
+    design-time-name="Package\Conversion\Read in STG_servingtypes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7398,20 +6583,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_breweries">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_servingtypes">
+    design-time-name="Package\Conversion\Read in STG_countries">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7438,6 +6610,19 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Conversion\Send to DW_stylecategories">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Send to DW_breweries">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7489,6 +6674,19 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Send to DW_servingtypes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Conversion\Send to DW_countries">
     <Properties>
       <Property>
@@ -7528,7 +6726,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_stylecategories">
+    design-time-name="Package\Conversion\Send to DW_styles">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7554,7 +6752,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_reviews">
+    design-time-name="Package\Conversion\Read in STG_stylecategories">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Read in STG_locations">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7579,104 +6790,8 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Data Flow Task\Convert reviews"
-          TopLeft="468,469" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="461,581" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Data Flow Task\Convert date column"
-          TopLeft="463,354" />
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Data Flow Task\Read in STG_reviews"
-          TopLeft="462,233" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="554,275">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79"
-              Start="0,0"
-              End="0,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="550,396">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,73"
-              Start="0,0"
-              End="0,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="548.25,511">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70"
-              Start="0,0"
-              End="0,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Conversion\Send to DW_reviews">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

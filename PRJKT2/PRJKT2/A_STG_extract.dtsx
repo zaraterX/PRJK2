@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{A53A69AA-9CC5-4F20-B35C-2480A42F4B9B}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{1E751CC8-C578-4D16-B010-EA684AECA60C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -508,7 +508,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="type_id"
-              DTS:DTSID="{EBCB31B9-80B8-46F4-B5E7-141CA8BF4679}"
+              DTS:DTSID="{045CD376-DEF9-4B42-83C7-33B55C517A37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="type"
+              DTS:DTSID="{FC84766C-9A34-4718-9CF7-50B0B3D033AA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -516,8 +525,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="type"
-              DTS:DTSID="{95DCEECD-63CC-40A5-A827-DE5A43098B14}"
+              DTS:ObjectName="typePrice"
+              DTS:DTSID="{B3BE4B95-FC31-4C77-A6DE-424694FF86FC}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2152,6 +2161,28 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\LoadOtherTables\Read in stylecategories.Outputs[Flat File Source Output].Columns[typePrice]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadOtherTables\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[typePrice]"
+                      length="50"
+                      lineageId="Package\LoadOtherTables\Read in stylecategories.Outputs[Flat File Source Output].Columns[typePrice]"
+                      name="typePrice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2167,6 +2198,12 @@
                       dataType="str"
                       length="50"
                       name="type" />
+                    <externalMetadataColumn
+                      refId="Package\LoadOtherTables\Read in stylecategories.Outputs[Flat File Source Output].ExternalColumns[typePrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="typePrice" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3889,6 +3926,14 @@
                       cachedName="type"
                       externalMetadataColumnId="Package\LoadOtherTables\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[style_category]"
                       lineageId="Package\LoadOtherTables\Read in stylecategories.Outputs[Flat File Source Output].Columns[type]" />
+                    <inputColumn
+                      refId="Package\LoadOtherTables\Send to STG_stylecategories.Inputs[OLE DB Destination Input].Columns[typePrice]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="typePrice"
+                      externalMetadataColumnId="Package\LoadOtherTables\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[typePrice]"
+                      lineageId="Package\LoadOtherTables\Read in stylecategories.Outputs[Flat File Source Output].Columns[typePrice]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3904,6 +3949,12 @@
                       dataType="str"
                       length="256"
                       name="style_category" />
+                    <externalMetadataColumn
+                      refId="Package\LoadOtherTables\Send to STG_stylecategories.Inputs[OLE DB Destination Input].ExternalColumns[typePrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="typePrice" />
                   </externalMetadataColumns>
                 </input>
               </inputs>

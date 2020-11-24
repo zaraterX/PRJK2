@@ -28,7 +28,8 @@ location_id INT,
 style_id INT,
 availability_type INT,
 abv NUMERIC(38,2),
-retired INT)
+retired INT,
+brewPrice MONEY)
 
 CREATE TABLE B_DW.dbo.DW_breweries(
 brewery_id INT,
@@ -63,6 +64,7 @@ CREATE TABLE B_DW.dbo.DW_reviews(
 beer_id INT,
 usr_name varchar(256),
 review_date DATE,
+priceTag MONEY,
 look NUMERIC(38,2),
 smell NUMERIC(38,2),
 taste NUMERIC(38,2),
@@ -76,7 +78,8 @@ serving_category varchar(256))
 
 CREATE TABLE B_DW.dbo.DW_stylecategories(
 category_id INT,
-style_category varchar(256))
+style_category varchar(256),
+typePrice tinyint)
 
 CREATE TABLE B_DW.dbo.DW_styles(
 style_id INT,
