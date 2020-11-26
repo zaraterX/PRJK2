@@ -11,9 +11,1360 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionGUID="{2ADCB57E-77C5-4E1F-936C-771D7B07537E}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{F4DEA43E-3AAB-498E-99BB-806A69E5FD9F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.B_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F1B4545A-7569-4E3D-9EEF-143991B71B45}"
+      DTS:ObjectName="LocalHost.B_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=B_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.C_DM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4C4AA6A9-7347-47D9-9F43-3FB0AA03933D}"
+      DTS:ObjectName="LocalHost.C_DM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=C_DM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\LoadFact"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A63C7D58-A5B2-4321-A266-14390F574739}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LoadFact"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\LoadFact\DimBeersView"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimBeersView"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimBeersView]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LoadFact\DimBeersView.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.B_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.B_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[beer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[beer_name]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[beer_name]"
+                      name="beer_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[abv]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[abv]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[abv]"
+                      name="abv"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[retired]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[retired]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[retired]"
+                      name="retired"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[brewPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[brewPrice]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[brewPrice]"
+                      name="brewPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[availability_category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[availability_category]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[availability_category]"
+                      name="availability_category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[style_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[style_name]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[style_name]"
+                      name="style_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[abv_high]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[abv_high]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[abv_high]"
+                      name="abv_high"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[abv_low]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[abv_low]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[abv_low]"
+                      name="abv_low"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[co2_volume_high]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[co2_volume_high]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[co2_volume_high]"
+                      name="co2_volume_high"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[co2_volume_low]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[co2_volume_low]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[co2_volume_low]"
+                      name="co2_volume_low"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[ibu_high]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[ibu_high]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[ibu_high]"
+                      name="ibu_high"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[ibu_lower]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[ibu_lower]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[ibu_lower]"
+                      name="ibu_lower"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[lambicdegree]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[lambicdegree]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[lambicdegree]"
+                      name="lambicdegree"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[style_category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[style_category]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[style_category]"
+                      name="style_category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_city]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_city]"
+                      name="Beers_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_stat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_stat]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_stat]"
+                      name="Beers_stat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_country_code]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_country_code]"
+                      name="Beers_country_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_country_name]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_country_name]"
+                      name="Beers_country_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_intermediate_region]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_intermediate_region]"
+                      name="Beers_intermediate_region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_region]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_region]"
+                      name="Beers_region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_sub_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_sub_region]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[Beers_sub_region]"
+                      name="Beers_sub_region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[BK_beer_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[BK_beer_id]"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].Columns[BK_beer_id]"
+                      name="BK_beer_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[beer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="beer_name" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[abv]"
+                      dataType="numeric"
+                      name="abv"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[retired]"
+                      dataType="i4"
+                      name="retired" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[brewPrice]"
+                      dataType="cy"
+                      name="brewPrice" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[availability_category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="availability_category" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[style_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="style_name" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[abv_high]"
+                      dataType="numeric"
+                      name="abv_high"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[abv_low]"
+                      dataType="numeric"
+                      name="abv_low"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[co2_volume_high]"
+                      dataType="numeric"
+                      name="co2_volume_high"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[co2_volume_low]"
+                      dataType="numeric"
+                      name="co2_volume_low"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[ibu_high]"
+                      dataType="i4"
+                      name="ibu_high" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[ibu_lower]"
+                      dataType="i4"
+                      name="ibu_lower" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[lambicdegree]"
+                      dataType="i4"
+                      name="lambicdegree" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[style_category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="style_category" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Beers_city" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_stat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Beers_stat" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Beers_country_code" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Beers_country_name" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Beers_intermediate_region" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Beers_region" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[Beers_sub_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Beers_sub_region" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Output].ExternalColumns[BK_beer_id]"
+                      dataType="i4"
+                      name="BK_beer_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[BK_beer_id]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[BK_beer_id]"
+                      name="BK_beer_id" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[beer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[beer_name]"
+                      name="beer_name" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[abv]"
+                      dataType="numeric"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[abv]"
+                      name="abv"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[retired]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[retired]"
+                      name="retired" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[brewPrice]"
+                      dataType="cy"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[brewPrice]"
+                      name="brewPrice" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[availability_category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[availability_category]"
+                      name="availability_category" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[style_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[style_name]"
+                      name="style_name" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[abv_high]"
+                      dataType="numeric"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[abv_high]"
+                      name="abv_high"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[abv_low]"
+                      dataType="numeric"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[abv_low]"
+                      name="abv_low"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[co2_volume_high]"
+                      dataType="numeric"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[co2_volume_high]"
+                      name="co2_volume_high"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[co2_volume_low]"
+                      dataType="numeric"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[co2_volume_low]"
+                      name="co2_volume_low"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[ibu_high]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[ibu_high]"
+                      name="ibu_high" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[ibu_lower]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[ibu_lower]"
+                      name="ibu_lower" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[lambicdegree]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[lambicdegree]"
+                      name="lambicdegree" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[style_category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[style_category]"
+                      name="style_category" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_city]"
+                      name="Beers_city" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_stat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_stat]"
+                      name="Beers_stat" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_country_code]"
+                      name="Beers_country_code" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_country_name]"
+                      name="Beers_country_name" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_intermediate_region]"
+                      name="Beers_intermediate_region" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_region]"
+                      name="Beers_region" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_sub_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[Beers_sub_region]"
+                      name="Beers_sub_region" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBeersView.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LoadFact\DimBreweriesView"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimBreweriesView"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimBreweriesView]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LoadFact\DimBreweriesView.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.B_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.B_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[BK_brewery_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[BK_brewery_id]"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[BK_brewery_id]"
+                      name="BK_brewery_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[brewery_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[brewery_name]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[brewery_name]"
+                      name="brewery_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_city]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_city]"
+                      name="Breweries_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_stat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_stat]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_stat]"
+                      name="Breweries_stat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_country_code]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_country_code]"
+                      name="Breweries_country_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_country_name]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_country_name]"
+                      name="Breweries_country_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_intermediate_region]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_intermediate_region]"
+                      name="Breweries_intermediate_region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_region]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_region]"
+                      name="Breweries_region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_sub_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_sub_region]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].Columns[Breweries_sub_region]"
+                      name="Breweries_sub_region"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[BK_brewery_id]"
+                      dataType="i4"
+                      name="BK_brewery_id" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[brewery_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="brewery_name" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Breweries_city" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_stat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Breweries_stat" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Breweries_country_code" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Breweries_country_name" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Breweries_intermediate_region" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Breweries_region" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Output].ExternalColumns[Breweries_sub_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Breweries_sub_region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[BK_brewery_id]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[BK_brewery_id]"
+                      name="BK_brewery_id" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[brewery_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[brewery_name]"
+                      name="brewery_name" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_city]"
+                      name="Breweries_city" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_stat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_stat]"
+                      name="Breweries_stat" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_country_code]"
+                      name="Breweries_country_code" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_country_name]"
+                      name="Breweries_country_name" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_intermediate_region]"
+                      name="Breweries_intermediate_region" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_region]"
+                      name="Breweries_region" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_sub_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[Breweries_sub_region]"
+                      name="Breweries_sub_region" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimBreweriesView.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\LoadFact\DimCostumerView"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimCostumerView"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimCostumerView]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\LoadFact\DimCostumerView.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.B_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.B_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[BK_usr_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[BK_usr_name]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[BK_usr_name]"
+                      name="BK_usr_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_city]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_city]"
+                      name="Costumer_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_stat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_stat]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_stat]"
+                      name="Costumer_stat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_country_code]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_country_code]"
+                      name="Costumer_country_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_country_name]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_country_name]"
+                      name="Costumer_country_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_intermediate_region]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_intermediate_region]"
+                      name="Costumer_intermediate_region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_region]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_region]"
+                      name="Costumer_region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_sub_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_sub_region]"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].Columns[Costumer_sub_region]"
+                      name="Costumer_sub_region"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[BK_usr_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="BK_usr_name" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Costumer_city" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_stat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Costumer_stat" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Costumer_country_code" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Costumer_country_name" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Costumer_intermediate_region" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Costumer_region" />
+                    <externalMetadataColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Output].ExternalColumns[Costumer_sub_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="Costumer_sub_region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[BK_usr_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[BK_usr_name]"
+                      name="BK_usr_name" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_city]"
+                      name="Costumer_city" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_stat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_stat]"
+                      name="Costumer_stat" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_country_code]"
+                      name="Costumer_country_code" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_country_name]"
+                      name="Costumer_country_name" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_intermediate_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_intermediate_region]"
+                      name="Costumer_intermediate_region" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_region]"
+                      name="Costumer_region" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_sub_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[Costumer_sub_region]"
+                      name="Costumer_sub_region" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\LoadFact\DimCostumerView.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="125,42"
+          Id="Package\LoadFact"
+          TopLeft="429,160" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\LoadFact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\LoadFact\DimBreweriesView"
+          TopLeft="478.5,82.4999999999999" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\LoadFact\DimCostumerView"
+          TopLeft="173,74" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\LoadFact\DimBeersView"
+          TopLeft="763.5,84.4999999999999" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\LoadFact\DimBreweriesView">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\LoadFact\DimCostumerView">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\LoadFact\DimBeersView">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

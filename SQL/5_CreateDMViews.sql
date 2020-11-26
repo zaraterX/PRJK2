@@ -4,17 +4,17 @@
 USE B_DW
 GO
 
-DROP VIEW IF EXISTS DimCostumer
-DROP VIEW IF EXISTS DimBreweries
-DROP VIEW IF EXISTS DimBeers
+DROP VIEW IF EXISTS DimCostumerView
+DROP VIEW IF EXISTS DimBreweriesView
+DROP VIEW IF EXISTS DimBeersView
 
 USE B_DW
 GO
 
-CREATE OR ALTER VIEW DimCostumer AS
+CREATE OR ALTER VIEW DimCostumerView AS
 SELECT
 
-DW_costumers.usr_name AS [BusinessKey],
+DW_costumers.usr_name AS [BK_usr_name],
 DW_costumers.email AS [email],
 DW_costumers.first_name AS [first_name],
 DW_costumers.last_name AS [last_name],
@@ -34,12 +34,12 @@ INNER JOIN DW_locations
 INNER JOIN B_DW.dbo.DW_countries
 	ON DW_locations.country_code = DW_countries.country_code;
 	
-
-CREATE OR ALTER VIEW DimBreweries AS
+GO
+CREATE OR ALTER VIEW DimBreweriesView AS
 SELECT
 
-dbo.DW_breweries.brewery_id AS [BusinessKey],
-dbo.DW_breweries.brewery_name AS [brewery_name],
+DW_breweries.brewery_id AS [BK_brewery_id],
+DW_breweries.brewery_name AS [brewery_name],
 
 dbo.DW_locations.city AS [Breweries_city],
 dbo.DW_locations.stat AS [Breweries_stat],
@@ -57,11 +57,11 @@ INNER JOIN DW_locations
 INNER JOIN B_DW.dbo.DW_countries
 	ON DW_locations.country_code = DW_countries.country_code;
 
-
-CREATE OR ALTER VIEW DimBeers AS
+GO
+CREATE OR ALTER VIEW DimBeersView AS
 SELECT
 
-DW_beers.beer_id AS [BusinessKey],
+DW_beers.beer_id AS [BK_beer_id],
 DW_beers.beer_name AS [beer_name],
 DW_beers.abv AS [abv],
 DW_beers.retired AS [retired],
@@ -100,13 +100,3 @@ INNER JOIN DW_locations
 	ON DW_beers.location_id = DW_locations.location_id
 INNER JOIN B_DW.dbo.DW_countries
 	ON DW_locations.country_code = DW_countries.country_code;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

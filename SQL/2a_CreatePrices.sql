@@ -13,8 +13,6 @@ INNER JOIN DW_styles
 	ON DW_beers.style_id = DW_styles.style_id
 INNER JOIN DW_stylecategories
 	ON DW_styles.category_type = DW_stylecategories.category_id
-inner join Pricetag
-on DW_beers.beer_id=Pricetag.beer_id
 
 update
 DW_reviews
