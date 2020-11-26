@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="B_DW_load"
   DTS:PackageType="5"
-  DTS:VersionBuild="160"
-  DTS:VersionGUID="{988BFE56-1E6B-4C71-842D-F58D9D218C26}">
+  DTS:VersionBuild="191"
+  DTS:VersionGUID="{B2B2F756-EB8B-42A4-8E0B-343CE53407DC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -656,81 +656,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Conversion\Convert date column backward"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Convert date column backward"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Conversion\Convert date column backward.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Conversion\Convert date column backward.Inputs[Data Conversion Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      lineageId="Package\Conversion\Convert date column forward.Outputs[Derived Column Error Output].Columns[ErrorColumn]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Conversion\Convert date column backward.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Output].Columns[Copy of ErrorColumn]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Output].Columns[Copy of ErrorColumn]"
-                      name="Copy of ErrorColumn"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Conversion\Convert date column forward.Outputs[Derived Column Error Output].Columns[ErrorColumn]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Conversion\Convert date column backward.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Conversion\Convert date column forward"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -764,24 +689,25 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Conversion\Convert date column forward.Outputs[Derived Column Output].Columns[date_review]"
-                      dataType="date"
+                      dataType="wstr"
                       errorOrTruncationOperation="Computation"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
+                      length="10"
                       lineageId="Package\Conversion\Convert date column forward.Outputs[Derived Column Output].Columns[date_review]"
                       name="date_review"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DATE)([SUBSTRING](#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]},7,4) + "-" + [SUBSTRING](#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]},4,2) + "-" + [SUBSTRING](#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]},1,2) + "")</property>
+                          name="Expression">([SUBSTRING](#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]},1,4) + "-" + [SUBSTRING](#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]},6,2) + "-" + [SUBSTRING](#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]},9,2))</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DATE)(SUBSTRING(review_date,7,4) + "-" + SUBSTRING(review_date,4,2) + "-" + SUBSTRING(review_date,1,2) + "")</property>
+                          name="FriendlyExpression">(SUBSTRING(review_date,1,4) + "-" + SUBSTRING(review_date,6,2) + "-" + SUBSTRING(review_date,9,2))</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -908,49 +834,55 @@
                       cachedDataType="str"
                       cachedLength="256"
                       cachedName="beer_id"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[beer_id]" />
+                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[beer_id]" />
                     <inputColumn
                       refId="Package\Conversion\Convert reviews.Inputs[Data Conversion Input].Columns[look]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="256"
                       cachedName="look"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[look]" />
+                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[look]" />
                     <inputColumn
                       refId="Package\Conversion\Convert reviews.Inputs[Data Conversion Input].Columns[smell]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="256"
                       cachedName="smell"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[smell]" />
+                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[smell]" />
                     <inputColumn
                       refId="Package\Conversion\Convert reviews.Inputs[Data Conversion Input].Columns[taste]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="256"
                       cachedName="taste"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[taste]" />
+                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[taste]" />
                     <inputColumn
                       refId="Package\Conversion\Convert reviews.Inputs[Data Conversion Input].Columns[feel]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="256"
                       cachedName="feel"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[feel]" />
+                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[feel]" />
                     <inputColumn
                       refId="Package\Conversion\Convert reviews.Inputs[Data Conversion Input].Columns[overall]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="256"
                       cachedName="overall"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[overall]" />
+                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[overall]" />
                     <inputColumn
                       refId="Package\Conversion\Convert reviews.Inputs[Data Conversion Input].Columns[score]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="256"
                       cachedName="score"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[score]" />
+                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[score]" />
+                    <inputColumn
+                      refId="Package\Conversion\Convert reviews.Inputs[Data Conversion Input].Columns[date_review]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="date_review"
+                      lineageId="Package\Conversion\Convert date column forward.Outputs[Derived Column Output].Columns[date_review]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -964,19 +896,18 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of beer_id]"
-                      dataType="decimal"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of beer_id]"
                       name="Copy of beer_id"
-                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[beer_id]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[beer_id]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -997,7 +928,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[look]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[look]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1018,7 +949,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[smell]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[smell]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1039,7 +970,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[taste]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[taste]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1060,7 +991,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[feel]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[feel]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1081,7 +1012,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[overall]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[overall]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1102,7 +1033,27 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[score]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[score]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of date_review]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of date_review]"
+                      name="Copy of date_review"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Conversion\Convert date column forward.Outputs[Derived Column Output].Columns[date_review]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -5009,7 +4960,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">true</property>
+                  name="FastLoadKeepIdentity">false</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
@@ -5041,9 +4992,8 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].Columns[Copy of beer_id]"
-                      cachedDataType="decimal"
+                      cachedDataType="i4"
                       cachedName="Copy of beer_id"
-                      cachedScale="2"
                       externalMetadataColumnId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[beer_id]"
                       lineageId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of beer_id]" />
                     <inputColumn
@@ -5053,7 +5003,7 @@
                       cachedLength="256"
                       cachedName="usr_name"
                       externalMetadataColumnId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[usr_name]"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[usr_name]" />
+                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[usr_name]" />
                     <inputColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].Columns[Copy of look]"
                       cachedDataType="decimal"
@@ -5061,12 +5011,6 @@
                       cachedScale="2"
                       externalMetadataColumnId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[look]"
                       lineageId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of look]" />
-                    <inputColumn
-                      refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].Columns[date_review]"
-                      cachedDataType="date"
-                      cachedName="date_review"
-                      externalMetadataColumnId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[review_date]"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[date_review]" />
                     <inputColumn
                       refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].Columns[Copy of smell]"
                       cachedDataType="decimal"
@@ -5102,6 +5046,12 @@
                       cachedScale="2"
                       externalMetadataColumnId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[score]"
                       lineageId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of score]" />
+                    <inputColumn
+                      refId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].Columns[Copy of date_review]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of date_review"
+                      externalMetadataColumnId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input].ExternalColumns[review_date]"
+                      lineageId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output].Columns[Copy of date_review]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5690,411 +5640,6 @@
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Conversion\Union All"
-              componentClassID="Microsoft.UnionAll"
-              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-              name="Union All"
-              version="1">
-              <inputs>
-                <input
-                  refId="Package\Conversion\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[beer_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="beer_id"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[beer_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[beer_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[usr_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="usr_name"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[usr_name]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[usr_name]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[review_date]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="review_date"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[review_date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[look]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="look"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[look]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[look]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[smell]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="smell"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[smell]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[smell]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[taste]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="taste"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[taste]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[taste]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[feel]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="feel"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[feel]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[feel]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[overall]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="overall"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[overall]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[overall]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[score]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="score"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[score]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[score]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 1].Columns[date_review]"
-                      cachedDataType="date"
-                      cachedName="date_review"
-                      lineageId="Package\Conversion\Convert date column forward.Outputs[Derived Column Output].Columns[date_review]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[date_review]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Conversion\Union All.Inputs[Union All Input 3]"
-                  hasSideEffects="true"
-                  name="Union All Input 3">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[beer_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="beer_id"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[beer_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[beer_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[usr_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="usr_name"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[usr_name]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[usr_name]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[review_date]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="review_date"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[review_date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[review_date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[look]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="look"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[look]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[look]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[smell]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="smell"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[smell]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[smell]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[taste]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="taste"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[taste]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[taste]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[feel]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="feel"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[feel]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[feel]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[overall]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="overall"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[overall]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[overall]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[score]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="256"
-                      cachedName="score"
-                      lineageId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output].Columns[score]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[score]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Conversion\Union All.Inputs[Union All Input 3].Columns[Copy of ErrorColumn]"
-                      cachedDataType="date"
-                      cachedName="Copy of ErrorColumn"
-                      lineageId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Output].Columns[Copy of ErrorColumn]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Conversion\Union All.Outputs[Union All Output 1].Columns[date_review]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Conversion\Union All.Inputs[Union All Input 2]"
-                  dangling="true"
-                  hasSideEffects="true"
-                  name="Union All Input 2">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Conversion\Union All.Outputs[Union All Output 1]"
-                  name="Union All Output 1">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[beer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[beer_id]"
-                      name="beer_id" />
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[usr_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[usr_name]"
-                      name="usr_name" />
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[review_date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[review_date]"
-                      name="review_date" />
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[look]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[look]"
-                      name="look" />
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[smell]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[smell]"
-                      name="smell" />
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[taste]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[taste]"
-                      name="taste" />
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[feel]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[feel]"
-                      name="feel" />
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[overall]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[overall]"
-                      name="overall" />
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[score]"
-                      codePage="1252"
-                      dataType="str"
-                      length="256"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[score]"
-                      name="score" />
-                    <outputColumn
-                      refId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[date_review]"
-                      dataType="date"
-                      lineageId="Package\Conversion\Union All.Outputs[Union All Output 1].Columns[date_review]"
-                      name="date_review" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
@@ -6103,125 +5648,110 @@
               name="Data Conversion Output"
               startId="Package\Conversion\Convert breweries.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output9]"
-              endId="Package\Conversion\Union All.Inputs[Union All Input 3]"
+              refId="Package\Conversion.Paths[Data Conversion Output1]"
+              endId="Package\Conversion\Send to DW_locations.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
-              startId="Package\Conversion\Convert date column backward.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[Data Conversion Output8]"
-              endId="Package\Conversion\Send to DW_costumers.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert costumers.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[Data Conversion Output7]"
-              endId="Package\Conversion\Send to DW_beers.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert beers.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[Data Conversion Output6]"
-              endId="Package\Conversion\Send to DW_breweryservices.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert breweryservices.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[Data Conversion Output10]"
-              endId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[Data Conversion Output4]"
-              endId="Package\Conversion\Send to DW_styles.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert styles.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Conversion.Paths[Data Conversion Output3]"
-              endId="Package\Conversion\Send to DW_servingtypes.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Conversion\Convert servingtypes.Outputs[Data Conversion Output]" />
+              startId="Package\Conversion\Convert locations.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Conversion.Paths[Data Conversion Output2]"
               endId="Package\Conversion\Send to DW_stylecategories.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert stylecategories.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Data Conversion Output1]"
-              endId="Package\Conversion\Send to DW_locations.Inputs[OLE DB Destination Input]"
+              refId="Package\Conversion.Paths[Data Conversion Output3]"
+              endId="Package\Conversion\Send to DW_servingtypes.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
-              startId="Package\Conversion\Convert locations.Outputs[Data Conversion Output]" />
+              startId="Package\Conversion\Convert servingtypes.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Conversion.Paths[Data Conversion Output4]"
+              endId="Package\Conversion\Send to DW_styles.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert styles.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Conversion.Paths[Data Conversion Output5]"
               endId="Package\Conversion\Send to DW_beeravaliabilities.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Conversion\Convert beeravaliabilities.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Conversion.Paths[Derived Column Error Output]"
-              endId="Package\Conversion\Convert date column backward.Inputs[Data Conversion Input]"
-              name="Derived Column Error Output"
-              startId="Package\Conversion\Convert date column forward.Outputs[Derived Column Error Output]" />
+              refId="Package\Conversion.Paths[Data Conversion Output6]"
+              endId="Package\Conversion\Send to DW_breweryservices.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert breweryservices.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Conversion.Paths[Data Conversion Output7]"
+              endId="Package\Conversion\Send to DW_beers.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert beers.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Conversion.Paths[Data Conversion Output8]"
+              endId="Package\Conversion\Send to DW_costumers.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert costumers.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Conversion.Paths[Data Conversion Output9]"
+              endId="Package\Conversion\Send to DW_reviews.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Conversion\Convert reviews.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Conversion.Paths[Derived Column Output]"
-              endId="Package\Conversion\Union All.Inputs[Union All Input 1]"
+              endId="Package\Conversion\Convert reviews.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Conversion\Convert date column forward.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Conversion.Paths[OLE DB Source Output10]"
-              endId="Package\Conversion\Convert date column forward.Inputs[Derived Column Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output9]"
-              endId="Package\Conversion\Convert styles.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_styles.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output8]"
-              endId="Package\Conversion\Convert beeravaliabilities.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_beeravaliabilities.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output6]"
-              endId="Package\Conversion\Convert breweryservices.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_breweryservices.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output5]"
-              endId="Package\Conversion\Convert costumers.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_costumers.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output4]"
-              endId="Package\Conversion\Send to DW_countries.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_countries.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output2]"
+              refId="Package\Conversion.Paths[OLE DB Source Output]"
               endId="Package\Conversion\Convert breweries.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_breweries.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Conversion.Paths[OLE DB Source Output1]"
-              endId="Package\Conversion\Convert locations.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_locations.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output]"
-              endId="Package\Conversion\Convert beers.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_beers.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output7]"
-              endId="Package\Conversion\Convert stylecategories.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Conversion.Paths[OLE DB Source Output3]"
               endId="Package\Conversion\Convert servingtypes.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Conversion\Read in STG_servingtypes.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Conversion.Paths[Union All Output 1]"
-              endId="Package\Conversion\Convert reviews.Inputs[Data Conversion Input]"
-              name="Union All Output 1"
-              startId="Package\Conversion\Union All.Outputs[Union All Output 1]" />
+              refId="Package\Conversion.Paths[OLE DB Source Output2]"
+              endId="Package\Conversion\Send to DW_countries.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_countries.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output3]"
+              endId="Package\Conversion\Convert costumers.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_costumers.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output4]"
+              endId="Package\Conversion\Convert breweryservices.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_breweryservices.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output5]"
+              endId="Package\Conversion\Convert stylecategories.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_stylecategories.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output6]"
+              endId="Package\Conversion\Convert beeravaliabilities.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_beeravaliabilities.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output7]"
+              endId="Package\Conversion\Convert styles.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_styles.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output8]"
+              endId="Package\Conversion\Convert beers.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_beers.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output9]"
+              endId="Package\Conversion\Convert date column forward.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_reviews.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Conversion.Paths[OLE DB Source Output10]"
+              endId="Package\Conversion\Convert locations.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Conversion\Read in STG_locations.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -6257,7 +5787,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{22FB40CA-BC54-431A-B27E-BEFCC9EF2277}"
-          SQLTask:SqlStatementSource="update&#xA;DW_beers&#xA;set&#xA;DW_beers.brewPrice = DW_stylecategories.typePrice*70+DW_stylecategories.typePrice* (ABS(CHECKSUM(NewId())) % 100)&#xA;from DW_beers&#xA;INNER JOIN DW_styles&#xA;&#x9;ON DW_beers.style_id = DW_styles.style_id&#xA;INNER JOIN DW_stylecategories&#xA;&#x9;ON DW_styles.category_type = DW_stylecategories.category_id&#xA;inner join Pricetag&#xA;on DW_beers.beer_id=Pricetag.beer_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update&#xA;DW_beers&#xA;set&#xA;DW_beers.brewPrice = DW_stylecategories.typePrice*70+DW_stylecategories.typePrice* (ABS(CHECKSUM(NewId())) % 100)&#xA;from DW_beers&#xA;INNER JOIN DW_styles&#xA;&#x9;ON DW_beers.style_id = DW_styles.style_id&#xA;INNER JOIN DW_stylecategories&#xA;&#x9;ON DW_styles.category_type = DW_stylecategories.category_id&#xA;where DW_beers.brewPrice IS NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -6274,7 +5804,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{22FB40CA-BC54-431A-B27E-BEFCC9EF2277}"
-          SQLTask:SqlStatementSource="update&#xA;DW_reviews&#xA;set&#xA;DW_reviews.priceTag = (brewPrice*100+brewPrice*(1+((CHECKSUM(NewId())) % 15)))/100&#xA;from DW_reviews&#xA;INNER JOIN DW_beers&#xA;&#x9;ON DW_beers.beer_id = DW_reviews.beer_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update&#xA;DW_reviews&#xA;set&#xA;DW_reviews.priceTag = (brewPrice*100+brewPrice*(1+((CHECKSUM(NewId())) % 15)))/100&#xA;from DW_reviews&#xA;INNER JOIN DW_beers&#xA;&#x9;ON DW_beers.beer_id = DW_reviews.beer_id&#xA;where priceTag IS NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -6405,11 +5935,11 @@
     design-time-name="Package\Conversion">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196,42"
-          Id="Package\Conversion\Read in STG_breweries"
-          TopLeft="903,33" />
+          Size="172,42"
+          Id="Package\Conversion\Send to DW_styles"
+          TopLeft="381,735" />
         <NodeLayout
           Size="226,42"
           Id="Package\Conversion\Send to DW_beeravaliabilities"
@@ -6419,13 +5949,17 @@
           Id="Package\Conversion\Read in STG_servingtypes"
           TopLeft="620,312" />
         <NodeLayout
+          Size="220,42"
+          Id="Package\Conversion\Convert date column forward"
+          TopLeft="907.936507936506,427.428571428571" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Conversion\Send to DW_reviews"
+          TopLeft="921.936507936506,696.873015873021" />
+        <NodeLayout
           Size="224,42"
           Id="Package\Conversion\Send to DW_breweryservices"
           TopLeft="351,226" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Conversion\Convert costumers"
-          TopLeft="634,135" />
         <NodeLayout
           Size="149,42"
           Id="Package\Conversion\Convert styles"
@@ -6435,21 +5969,29 @@
           Id="Package\Conversion\Read in STG_countries"
           TopLeft="67,308" />
         <NodeLayout
+          Size="171,42"
+          Id="Package\Conversion\Convert costumers"
+          TopLeft="634,135" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Conversion\Read in STG_costumers"
+          TopLeft="617,40" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Conversion\Send to DW_costumers"
+          TopLeft="618,225" />
+        <NodeLayout
           Size="218,42"
           Id="Package\Conversion\Send to DW_stylecategories"
           TopLeft="81,733" />
         <NodeLayout
-          Size="188,42"
-          Id="Package\Conversion\Send to DW_locations"
-          TopLeft="353,492" />
+          Size="194,42"
+          Id="Package\Conversion\Convert stylecategories"
+          TopLeft="86,651" />
         <NodeLayout
           Size="200,42"
           Id="Package\Conversion\Convert breweryservices"
           TopLeft="357,134" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\Conversion\Convert stylecategories"
-          TopLeft="86,651" />
         <NodeLayout
           Size="192,42"
           Id="Package\Conversion\Send to DW_breweries"
@@ -6459,10 +6001,6 @@
           Id="Package\Conversion\Convert servingtypes"
           TopLeft="627,402" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Conversion\Send to DW_styles"
-          TopLeft="381,735" />
-        <NodeLayout
           Size="176,42"
           Id="Package\Conversion\Read in STG_beers"
           TopLeft="617,569" />
@@ -6471,9 +6009,9 @@
           Id="Package\Conversion\Convert breweries"
           TopLeft="918,136" />
         <NodeLayout
-          Size="199,42"
-          Id="Package\Conversion\Read in STG_costumers"
-          TopLeft="617,40" />
+          Size="186,42"
+          Id="Package\Conversion\Read in STG_reviews"
+          TopLeft="925.714285714286,321.428571428571" />
         <NodeLayout
           Size="177,42"
           Id="Package\Conversion\Read in STG_styles"
@@ -6507,67 +6045,31 @@
           Id="Package\Conversion\Read in STG_locations"
           TopLeft="356,310" />
         <NodeLayout
+          Size="158,42"
+          Id="Package\Conversion\Convert reviews"
+          TopLeft="938.158730158736,574.873015873021" />
+        <NodeLayout
           Size="148,42"
           Id="Package\Conversion\Convert beers"
           TopLeft="625,653" />
-        <NodeLayout
-          Size="195,42"
-          Id="Package\Conversion\Send to DW_costumers"
-          TopLeft="618,225" />
         <NodeLayout
           Size="164,42"
           Id="Package\Conversion\Convert locations"
           TopLeft="363,402" />
         <NodeLayout
+          Size="188,42"
+          Id="Package\Conversion\Send to DW_locations"
+          TopLeft="353,492" />
+        <NodeLayout
           Size="202,42"
           Id="Package\Conversion\Convert beeravaliabilities"
           TopLeft="62,134" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Conversion\Read in STG_breweries"
+          TopLeft="903,33" />
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output5]"
-          TopLeft="718,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53"
-              Start="0,0"
-              End="0,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output4]"
-          TopLeft="164.5,350">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output3]"
+          Id="Package\Conversion.Paths[OLE DB Source Output1]"
           TopLeft="721.5,354">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6589,7 +6091,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output2]"
+          Id="Package\Conversion.Paths[OLE DB Source Output]"
           TopLeft="1001.5,75">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6611,19 +6113,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output1]"
-          TopLeft="448.5,352">
+          Id="Package\Conversion.Paths[Derived Column Output]"
+          TopLeft="1017.54761904762,469.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50"
+              EndConnector="0,105.444444444445"
               Start="0,0"
-              End="0,42.5">
+              End="0,97.944444444445">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="0,97.944444444445" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6633,19 +6135,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output]"
-          TopLeft="702,611">
+          Id="Package\Conversion.Paths[Data Conversion Output9]"
+          TopLeft="1014.79761904762,616.873015873021">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="0,80"
               Start="0,0"
-              End="0,34.5">
+              End="0,72.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,72.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6853,7 +6355,73 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Conversion.Paths[OLE DB Source Output10]"
+          TopLeft="448.5,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output9]"
+          TopLeft="1018.3253968254,363.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[OLE DB Source Output8]"
+          TopLeft="702,611">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conversion.Paths[OLE DB Source Output7]"
           TopLeft="473,613">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6875,7 +6443,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output8]"
+          Id="Package\Conversion.Paths[OLE DB Source Output6]"
           TopLeft="164,86">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6897,7 +6465,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output7]"
+          Id="Package\Conversion.Paths[OLE DB Source Output5]"
           TopLeft="184,610">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6919,7 +6487,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output6]"
+          Id="Package\Conversion.Paths[OLE DB Source Output4]"
           TopLeft="459.5,84">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6940,40 +6508,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Conversion\Read in STG_reviews"
-          TopLeft="1194,219.666666666667" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Conversion\Convert reviews"
-          TopLeft="1202,742.888888888889" />
-        <NodeLayout
-          Size="220,42"
-          Id="Package\Conversion\Convert date column forward"
-          TopLeft="1195,341.888888888889" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Conversion\Convert date column backward"
-          TopLeft="1321,461.888888888889" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Conversion\Union All"
-          TopLeft="1226,625.888888888889" />
         <EdgeLayout
-          Id="Package\Conversion.Paths[Derived Column Output]"
-          TopLeft="1269,383.888888888889">
+          Id="Package\Conversion.Paths[OLE DB Source Output3]"
+          TopLeft="718,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,242"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,234.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,234.5" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6983,149 +6531,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conversion.Paths[Union All Output 1]"
-          TopLeft="1284.25,667.888888888889">
+          Id="Package\Conversion.Paths[OLE DB Source Output2]"
+          TopLeft="164.5,350">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,75.0000000000005"
+              EndConnector="0,50"
               Start="0,0"
-              End="0,67.5000000000005">
+              End="0,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,67.5000000000005" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output9]"
-          TopLeft="1436,503.888888888889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-129.333333333333,122"
-              Start="0,0"
-              End="-129.333333333333,114.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,68.2600321027287" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,68.2600321027287"
-                    Point2="0,72.2600321027287"
-                    Point3="-4,72.2600321027287" />
-                  <mssgle:LineSegment
-                    End="-125.333333333333,72.2600321027287" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-125.333333333333,72.2600321027287"
-                    Point2="-129.333333333333,72.2600321027287"
-                    Point3="-129.333333333333,76.2600321027287" />
-                  <mssgle:LineSegment
-                    End="-129.333333333333,114.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[OLE DB Source Output10]"
-          TopLeft="1287,261.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18,80.2222222222221"
-              Start="0,0"
-              End="18,72.7222222222221">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.1111111111111" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.1111111111111"
-                    Point2="0,40.1111111111111"
-                    Point3="4,40.1111111111111" />
-                  <mssgle:LineSegment
-                    End="14,40.1111111111111" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14,40.1111111111111"
-                    Point2="18,40.1111111111111"
-                    Point3="18,44.1111111111111" />
-                  <mssgle:LineSegment
-                    End="18,72.7222222222221" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Derived Column Error Output]"
-          TopLeft="1340.33333333333,383.888888888889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="95.6666666666667,78"
-              Start="0,0"
-              End="95.6666666666667,70.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5379061371841" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5379061371841"
-                    Point2="0,31.5379061371841"
-                    Point3="4,31.5379061371841" />
-                  <mssgle:LineSegment
-                    End="91.6666666666667,31.5379061371841" />
-                  <mssgle:CubicBezierSegment
-                    Point1="91.6666666666667,31.5379061371841"
-                    Point2="95.6666666666667,31.5379061371841"
-                    Point3="95.6666666666667,35.5379061371841" />
-                  <mssgle:LineSegment
-                    End="95.6666666666667,70.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.1280533854166,36.5379061371841,129.9227734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Conversion\Send to DW_reviews"
-          TopLeft="1192.22222222222,827.111111111112" />
-        <EdgeLayout
-          Id="Package\Conversion.Paths[Data Conversion Output10]"
-          TopLeft="1281.86111111111,784.888888888889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.2222222222224"
-              Start="0,0"
-              End="0,34.7222222222224">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.7222222222224" />
+                    End="0,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7138,7 +6556,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_breweries">
+    design-time-name="Package\Conversion\Send to DW_styles">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7203,7 +6621,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_stylecategories">
+    design-time-name="Package\Conversion\Read in STG_costumers">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7216,7 +6634,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_locations">
+    design-time-name="Package\Conversion\Send to DW_costumers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conversion\Send to DW_stylecategories">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7242,33 +6673,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_styles">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Conversion\Read in STG_beers">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Read in STG_costumers">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7385,7 +6790,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_costumers">
+    design-time-name="Package\Conversion\Send to DW_locations">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7398,7 +6803,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Conversion\Send to DW_reviews">
+    design-time-name="Package\Conversion\Read in STG_breweries">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
