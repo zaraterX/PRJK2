@@ -1,30 +1,14 @@
 -------------
 --DM LAYER Date table
 -------------
-USE C_DM
-GO
-
-DROP TABLE IF EXISTS C_DM.dbo.DimDate
-
-CREATE TABLE C_DM.dbo.DimDate
-(
-DimDateID int,
-[Date] datetime,
-[Day] int,
-[Month] int,
-[Quarter] int,
-[Year] int,
-LoadTimeStamp TIMESTAMP
-)
-
 DROP PROCEDURE IF EXISTS LoadDimDate
 
 USE C_DM
 GO
 
 CREATE OR ALTER PROCEDURE LoadDimDate
-@StartDate DATE = '2000-01-01',
-@EndDate DATE = '2025-12-31'
+@StartDate DATE = '1996-01-01',
+@EndDate DATE = '2019-12-31'
 
 AS
 BEGIN
