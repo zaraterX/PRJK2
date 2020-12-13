@@ -11,8 +11,8 @@
   DTS:LocaleID="1038"
   DTS:ObjectName="B_DW_load"
   DTS:PackageType="5"
-  DTS:VersionBuild="191"
-  DTS:VersionGUID="{B2B2F756-EB8B-42A4-8E0B-343CE53407DC}">
+  DTS:VersionBuild="192"
+  DTS:VersionGUID="{32B590B0-A449-46B5-99DF-EE63E2F86B09}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5939,23 +5939,23 @@
         <NodeLayout
           Size="172,42"
           Id="Package\Conversion\Send to DW_styles"
-          TopLeft="381,735" />
+          TopLeft="367,1161" />
         <NodeLayout
           Size="226,42"
           Id="Package\Conversion\Send to DW_beeravaliabilities"
-          TopLeft="57,226" />
+          TopLeft="47,238" />
         <NodeLayout
           Size="210,42"
           Id="Package\Conversion\Read in STG_servingtypes"
-          TopLeft="620,312" />
+          TopLeft="606,738" />
         <NodeLayout
           Size="220,42"
           Id="Package\Conversion\Convert date column forward"
-          TopLeft="907.936507936506,427.428571428571" />
+          TopLeft="893.936507936506,853.428571428571" />
         <NodeLayout
           Size="181,42"
           Id="Package\Conversion\Send to DW_reviews"
-          TopLeft="921.936507936506,696.873015873021" />
+          TopLeft="907.936507936506,1122.87301587302" />
         <NodeLayout
           Size="224,42"
           Id="Package\Conversion\Send to DW_breweryservices"
@@ -5963,11 +5963,11 @@
         <NodeLayout
           Size="149,42"
           Id="Package\Conversion\Convert styles"
-          TopLeft="398,652" />
+          TopLeft="384,1078" />
         <NodeLayout
           Size="193,42"
           Id="Package\Conversion\Read in STG_countries"
-          TopLeft="67,308" />
+          TopLeft="53,734" />
         <NodeLayout
           Size="171,42"
           Id="Package\Conversion\Convert costumers"
@@ -5983,11 +5983,11 @@
         <NodeLayout
           Size="218,42"
           Id="Package\Conversion\Send to DW_stylecategories"
-          TopLeft="81,733" />
+          TopLeft="67,1159" />
         <NodeLayout
           Size="194,42"
           Id="Package\Conversion\Convert stylecategories"
-          TopLeft="86,651" />
+          TopLeft="72,1077" />
         <NodeLayout
           Size="200,42"
           Id="Package\Conversion\Convert breweryservices"
@@ -5999,11 +5999,11 @@
         <NodeLayout
           Size="182,42"
           Id="Package\Conversion\Convert servingtypes"
-          TopLeft="627,402" />
+          TopLeft="613,828" />
         <NodeLayout
           Size="176,42"
           Id="Package\Conversion\Read in STG_beers"
-          TopLeft="617,569" />
+          TopLeft="603,995" />
         <NodeLayout
           Size="168,42"
           Id="Package\Conversion\Convert breweries"
@@ -6011,15 +6011,15 @@
         <NodeLayout
           Size="186,42"
           Id="Package\Conversion\Read in STG_reviews"
-          TopLeft="925.714285714286,321.428571428571" />
+          TopLeft="911.714285714286,747.428571428571" />
         <NodeLayout
           Size="177,42"
           Id="Package\Conversion\Read in STG_styles"
-          TopLeft="385,571" />
+          TopLeft="371,997" />
         <NodeLayout
           Size="189,42"
           Id="Package\Conversion\Send to DW_countries"
-          TopLeft="71,400" />
+          TopLeft="57,826" />
         <NodeLayout
           Size="230,42"
           Id="Package\Conversion\Read in STG_beeravaliabilities"
@@ -6031,35 +6031,35 @@
         <NodeLayout
           Size="206,42"
           Id="Package\Conversion\Send to DW_servingtypes"
-          TopLeft="622,492" />
+          TopLeft="608,918" />
         <NodeLayout
           Size="172,42"
           Id="Package\Conversion\Send to DW_beers"
-          TopLeft="618,732" />
+          TopLeft="604,1158" />
         <NodeLayout
           Size="222,42"
           Id="Package\Conversion\Read in STG_stylecategories"
-          TopLeft="74,568" />
+          TopLeft="60,994" />
         <NodeLayout
           Size="192,42"
           Id="Package\Conversion\Read in STG_locations"
-          TopLeft="356,310" />
+          TopLeft="342,736" />
         <NodeLayout
           Size="158,42"
           Id="Package\Conversion\Convert reviews"
-          TopLeft="938.158730158736,574.873015873021" />
+          TopLeft="924.158730158736,1000.87301587302" />
         <NodeLayout
           Size="148,42"
           Id="Package\Conversion\Convert beers"
-          TopLeft="625,653" />
+          TopLeft="611,1079" />
         <NodeLayout
           Size="164,42"
           Id="Package\Conversion\Convert locations"
-          TopLeft="363,402" />
+          TopLeft="349,828" />
         <NodeLayout
           Size="188,42"
           Id="Package\Conversion\Send to DW_locations"
-          TopLeft="353,492" />
+          TopLeft="339,918" />
         <NodeLayout
           Size="202,42"
           Id="Package\Conversion\Convert beeravaliabilities"
@@ -6070,7 +6070,7 @@
           TopLeft="903,33" />
         <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output1]"
-          TopLeft="721.5,354">
+          TopLeft="707.5,780">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6114,7 +6114,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[Derived Column Output]"
-          TopLeft="1017.54761904762,469.428571428571">
+          TopLeft="1003.54761904762,895.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6136,7 +6136,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[Data Conversion Output9]"
-          TopLeft="1014.79761904762,616.873015873021">
+          TopLeft="1000.79761904762,1042.87301587302">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6180,7 +6180,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[Data Conversion Output7]"
-          TopLeft="701.5,695">
+          TopLeft="687.5,1121">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6224,18 +6224,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[Data Conversion Output5]"
-          TopLeft="166.5,176">
+          TopLeft="161.5,176">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50"
+              EndConnector="0,62"
               Start="0,0"
-              End="0,42.5">
+              End="0,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="0,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6246,7 +6246,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[Data Conversion Output4]"
-          TopLeft="469.75,694">
+          TopLeft="455.75,1120">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6268,7 +6268,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[Data Conversion Output3]"
-          TopLeft="721.5,444">
+          TopLeft="707.5,870">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6290,7 +6290,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[Data Conversion Output2]"
-          TopLeft="186.5,693">
+          TopLeft="172.5,1119">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6312,7 +6312,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[Data Conversion Output1]"
-          TopLeft="446,444">
+          TopLeft="432,870">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6356,7 +6356,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output10]"
-          TopLeft="448.5,352">
+          TopLeft="434.5,778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6378,7 +6378,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output9]"
-          TopLeft="1018.3253968254,363.428571428571">
+          TopLeft="1004.3253968254,789.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6400,7 +6400,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output8]"
-          TopLeft="702,611">
+          TopLeft="688,1037">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6422,7 +6422,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output7]"
-          TopLeft="473,613">
+          TopLeft="459,1039">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6466,7 +6466,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output5]"
-          TopLeft="184,610">
+          TopLeft="170,1036">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6532,7 +6532,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conversion.Paths[OLE DB Source Output2]"
-          TopLeft="164.5,350">
+          TopLeft="150.5,776">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
