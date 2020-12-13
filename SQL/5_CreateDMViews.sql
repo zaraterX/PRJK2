@@ -7,6 +7,7 @@ GO
 DROP VIEW IF EXISTS DimCostumerView
 DROP VIEW IF EXISTS DimBreweriesView
 DROP VIEW IF EXISTS DimBeersView
+DROP VIEW IF EXISTS FactReviews
 
 USE B_DW
 GO
@@ -69,25 +70,25 @@ DW_beers.brewPrice AS [brewPrice],
 
 DW_beeravaliabilities.availability_category AS [availability_category],
 
-DW_styles.style_name AS [style_name],
-DW_styles.abv_high AS [abv_high],
-DW_styles.abv_low AS [abv_low],
-DW_styles.co2_volume_high AS [co2_volume_high],
-DW_styles.co2_volume_low AS [co2_volume_low],
-DW_styles.ibu_high AS [ibu_high],
-DW_styles.ibu_lower AS [ibu_lower],
-DW_styles.lambicdegree AS [lambicdegree],
+dbo.DW_styles.style_name AS [style_name],
+dbo.DW_styles.abv_high AS [abv_high],
+dbo.DW_styles.abv_low AS [abv_low],
+dbo.DW_styles.co2_volume_high AS [co2_volume_high],
+dbo.DW_styles.co2_volume_low AS [co2_volume_low],
+dbo.DW_styles.ibu_high AS [ibu_high],
+dbo.DW_styles.ibu_lower AS [ibu_lower],
+dbo.DW_styles.lambicdegree AS [lambicdegree],
 
-DW_stylecategories.style_category AS [style_category],
+dbo.DW_stylecategories.style_category AS [style_category],
 
-DW_locations.city AS [Beers_city],
-DW_locations.stat AS [Beers_stat],
-DW_locations.country_code AS [Beers_country_code],
+dbo.DW_locations.city AS [Beers_city],
+dbo.DW_locations.stat AS [Beers_stat],
+dbo.DW_locations.country_code AS [Beers_country_code],
 
-DW_countries.country_name AS [Beers_country_name],
-DW_countries.intermediate_region AS [Beers_intermediate_region],
-DW_countries.region AS [Beers_region],
-DW_countries.sub_region AS [Beers_sub_region]
+dbo.DW_countries.country_name AS [Beers_country_name],
+dbo.DW_countries.intermediate_region AS [Beers_intermediate_region],
+dbo.DW_countries.region AS [Beers_region],
+dbo.DW_countries.sub_region AS [Beers_sub_region]
 
 FROM DW_beers
 INNER JOIN DW_beeravaliabilities
@@ -100,3 +101,23 @@ INNER JOIN DW_locations
 	ON DW_beers.location_id = DW_locations.location_id
 INNER JOIN B_DW.dbo.DW_countries
 	ON DW_locations.country_code = DW_countries.country_code;
+	
+GO
+CREATE OR ALTER VIEW FactReviews AS
+SELECT
+ROW_NUMBER() OVER(ORDER BY DW_reviews.beer_id) AS ID,
+DW_reviews.beer_id AS [beer_id],
+DW_beers.brewery_id AS [brewery_id],
+DW_reviews.usr_name AS [usr_name],
+DW_reviews.review_date AS [review_date],
+DW_reviews.score AS [score],
+DW_reviews.smell AS [smell],
+DW_reviews.taste AS [taste],
+DW_reviews.feel AS [feel],
+DW_reviews.look AS [look],
+DW_reviews.overall AS [overall],
+DW_reviews.priceTag AS [priceTag]
+
+FROM DW_reviews
+INNER JOIN DW_beers
+	ON DW_reviews.beer_id = DW_beers.beer_id;

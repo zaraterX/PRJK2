@@ -11,6 +11,7 @@ DROP TABLE IF EXISTS C_DM.dbo.DimDate
 DROP TABLE IF EXISTS C_DM.dbo.FactReviews
 
 CREATE TABLE C_DM.dbo.DimBeers(
+DimBeerID INT IDENTITY(1,1),
 BK_beer_id INT,
 beer_name varchar(256),
 abv NUMERIC(38,2),
@@ -35,6 +36,7 @@ Beers_region varchar(256),
 Beers_sub_region varchar(256))
 
 CREATE TABLE C_DM.dbo.DimBreweries(
+DimBreweriesID INT IDENTITY(1,1),
 BK_brewery_id INT,
 brewery_name varchar(256),
 Breweries_city varchar(256),
@@ -46,6 +48,7 @@ Breweries_region varchar(256),
 Breweries_sub_region varchar(256))
 
 CREATE TABLE C_DM.dbo.DimCostumer(
+DimCostumerID INT IDENTITY(1,1),
 BK_usr_name varchar(256),
 email varchar(256),
 first_name varchar(256),
@@ -60,18 +63,18 @@ Costumer_sub_region varchar(256))
 
 CREATE TABLE C_DM.dbo.DimDate(
 DimDateID INT,
-Date datetime,
+Date date,
 Day INT,
 Month INT,
 Quarter INT,
 Year INT)
 
 CREATE TABLE C_DM.dbo.FactReviews(
-FactReviewID INT IDENTITY(1,1),
-beer_id INT,
-brewery_id INT,
-usr_name varchar(256),
-review_date int,
+FactReviewID BIGINT IDENTITY(1,1),
+DimBeerID INT,
+DimBreweriesID INT,
+DimCostumerID int,
+DimDateID int,
 score NUMERIC(38,2),
 smell NUMERIC(38,2),
 taste NUMERIC(38,2),
